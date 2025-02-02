@@ -2,11 +2,10 @@
 let map;
 let geoJsonLayer;
 let boundaryLayer;
-let selectedRegions = [];  // Array holding the selected boundary layers
-let allBoundaryFeatures = [];  // All boundary features loaded from the DB
+let selectedRegions = [];  // Holds the selected region boundaries
+let allBoundaryFeatures = [];  // All boundaries loaded from DB
 
 // Static budget data (fake numbers) for each Montreal region.
-// Ensure that these keys match the region names (after fix_encoding) from your DB.
 const regionBudgetData = {
   "LaSalle": {
     renting: { min: 800, max: 1500 },
@@ -24,8 +23,6 @@ const regionBudgetData = {
 };
 
 // --- Helper Functions ---
-
-// Convert an object to a plain JavaScript object
 function makePlain(obj) {
   try {
     return JSON.parse(JSON.stringify(obj));
@@ -33,8 +30,6 @@ function makePlain(obj) {
     return obj;
   }
 }
-
-// Fix encoding issues (using cp1252 decoding for French text)
 function fix_encoding(text) {
   if (typeof text === 'string') {
     try {
@@ -45,16 +40,26 @@ function fix_encoding(text) {
   }
   return text;
 }
-
-// A no-op filterRegions function so that the oninput attribute in HTML doesn't fail.
 function filterRegions(searchText) {
   console.log("filterRegions called with:", searchText);
-  // (Optional) You could implement region name filtering for a dropdown here.
+  // Optional: implement filtering if desired.
 }
 
-// --- Map & Data Functions ---
+// --- Custom Icons ---
+const evIcon = L.divIcon({
+  html: "<div class='custom-marker ev-marker'><i class='fas fa-charging-station'></i></div>",
+  className: "custom-div-icon",
+  iconSize: [30, 42],
+  iconAnchor: [15, 42]
+});
+const houseIcon = L.divIcon({
+  html: "<div class='custom-marker house-marker'><i class='fas fa-home'></i></div>",
+  className: "custom-div-icon",
+  iconSize: [30, 42],
+  iconAnchor: [15, 42]
+});
 
-// Initialize the map (loads only boundaries initially)
+// --- Map & Data Functions ---
 function initMap() {
   console.log('Initializing map...');
   const mapElement = document.getElementById('map');
@@ -65,16 +70,10 @@ function initMap() {
   if (!map) {
     console.log('Creating new map instance');
     map = L.map('map').setView([45.5017, -73.5673], 12);
-
-    // ✅ Replacing OpenStreetMap with Mapbox Custom Style
-    L.tileLayer('https://api.mapbox.com/styles/v1/relusme/cm6mqwdfr00mm01s943kh6y0i/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVsdXNtZSIsImEiOiJjbTZtcTI4dmswb2JsMmtweWJweDJ2cThuIn0.r_rXgxgomdiVXq_Tg-bnUQ', {
-      attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-      tileSize: 512,
-      zoomOffset: -1,
-      maxZoom: 20
-
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
     }).addTo(map);
-    // Load boundaries from DB
     loadMontrealBoundaries();
     setTimeout(() => {
       console.log('Invalidating map size');
@@ -82,15 +81,13 @@ function initMap() {
     }, 200);
   }
 }
-
-// Load boundaries (region polygons) from the DB
 function loadMontrealBoundaries() {
   fetch('/data?collection=limites_administratives_agglomeration')
     .then(response => response.json())
     .then(data => {
       console.log('DEBUG: Boundaries data:', data);
       const features = Array.isArray(data) ? data : [data];
-      allBoundaryFeatures = features; // Store globally
+      allBoundaryFeatures = features;
       boundaryLayer = L.geoJSON({
         type: "FeatureCollection",
         features: features
@@ -115,11 +112,8 @@ function loadMontrealBoundaries() {
           layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
-            click: function(e) {
-              toggleRegionSelection(e);
-            }
+            click: function(e) { toggleRegionSelection(e); }
           });
-          // Optionally add region to dropdown if present
           addRegionToDropdown(name, feature);
         }
       }).addTo(map);
@@ -141,7 +135,6 @@ function loadMontrealBoundaries() {
       map.setView([45.5017, -73.5673], 12);
     });
 }
-
 function highlightFeature(e) {
   const layer = e.target;
   layer.setStyle({
@@ -151,14 +144,12 @@ function highlightFeature(e) {
     fillOpacity: 0.3
   });
 }
-
 function resetHighlight(e) {
   const layer = e.target;
   if (!selectedRegions.includes(layer)) {
     boundaryLayer.resetStyle(layer);
   }
 }
-
 function toggleRegionSelection(e) {
   const layer = e.target;
   const index = selectedRegions.indexOf(layer);
@@ -175,8 +166,6 @@ function toggleRegionSelection(e) {
     boundaryLayer.resetStyle(layer);
   }
 }
-
-// Add region to dropdown (if present)
 function addRegionToDropdown(name, feature) {
   const select = document.getElementById('region-select');
   if (select) {
@@ -191,141 +180,139 @@ function addRegionToDropdown(name, feature) {
   }
 }
 
-// Filter regions by budget. This uses static budget data to filter boundaries.
-function filterRegionsByBudget() {
-  const toggle = document.getElementById("budget-toggle").value; // "renting" or "buying"
-  const minBudget = parseFloat(document.getElementById("budget-min").value);
-  const maxBudget = parseFloat(document.getElementById("budget-max").value);
-  console.log("Budget filter:", toggle, minBudget, maxBudget);
-  if (isNaN(minBudget) || isNaN(maxBudget)) {
-    alert("Please enter both a minimum and maximum budget.");
-    return;
-  }
-  let matchingRegions = [];
-  for (let region in regionBudgetData) {
-    let data = regionBudgetData[region][toggle];
-    if (data.min <= maxBudget && data.max >= minBudget) {
-      matchingRegions.push(region);
+// --- Combined Search Function ---
+// Applies a budget filter (if provided), loads point data, requests a region summary,
+// and automatically retrieves a property advisor plan.
+function search() {
+  // 1. Apply budget filter if budget values are provided.
+  const budgetMinElem = document.getElementById("budget-min");
+  const budgetMaxElem = document.getElementById("budget-max");
+  if (budgetMinElem.value !== "" && budgetMaxElem.value !== "") {
+    const budgetToggle = document.getElementById("budget-toggle").value;
+    const minBudget = parseFloat(budgetMinElem.value);
+    const maxBudget = parseFloat(budgetMaxElem.value);
+    console.log("Budget filter:", budgetToggle, minBudget, maxBudget);
+    if (isNaN(minBudget) || isNaN(maxBudget)) {
+      alert("Please enter valid numbers for budget.");
+      return;
     }
-  }
-  console.log("Matching regions:", matchingRegions);
-  if (matchingRegions.length === 0) {
-    alert("No regions match the selected budget range.");
-    return;
-  }
-  // Remove current boundaryLayer
-  if (boundaryLayer) {
-    map.removeLayer(boundaryLayer);
-  }
-  // Filter the global allBoundaryFeatures based on matching region names
-  const filteredFeatures = allBoundaryFeatures.filter(feature => {
-    const props = makePlain(feature.properties) || {};
-    const rawName = props.NOM || props.NOM_OFFICIEL;
-    const name = rawName && rawName.trim() ? fix_encoding(rawName) : '';
-    return matchingRegions.includes(name);
-  });
-  boundaryLayer = L.geoJSON({
-    type: "FeatureCollection",
-    features: filteredFeatures
-  }, {
-    style: {
-      color: '#2196F3',
-      weight: 2,
-      opacity: 0.8,
-      fillColor: '#2196F3',
-      fillOpacity: 0.2,
-      dashArray: '3'
-    },
-    onEachFeature: function(feature, layer) {
+    let matchingRegions = [];
+    for (let region in regionBudgetData) {
+      let data = regionBudgetData[region][budgetToggle];
+      if (data.min <= maxBudget && data.max >= minBudget) {
+        matchingRegions.push(region);
+      }
+    }
+    console.log("Matching regions:", matchingRegions);
+    if (matchingRegions.length === 0) {
+      alert("No regions match the selected budget range.");
+      return;
+    }
+    if (boundaryLayer) { map.removeLayer(boundaryLayer); }
+    const filteredFeatures = allBoundaryFeatures.filter(feature => {
       const props = makePlain(feature.properties) || {};
       const rawName = props.NOM || props.NOM_OFFICIEL;
-      const name = rawName && rawName.trim() ? fix_encoding(rawName) : 'Unknown Region';
-      layer.bindPopup(`
-        <b>${name}</b><br>
-        Type: ${props.TYPE || 'N/A'}<br>
-        Code: ${props.CODE_3C || 'N/A'}<br>
-        ${toggle === "renting"
-          ? `<b>Rent Range:</b> $${regionBudgetData[name].renting.min} - $${regionBudgetData[name].renting.max} / month`
-          : `<b>Buy Range:</b> $${regionBudgetData[name].buying.min} - $${regionBudgetData[name].buying.max}`
-        }
-      `);
-      layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: function(e) {
-          toggleRegionSelection(e);
-        }
-      });
-    }
-  }).addTo(map);
-  // Update selectedRegions with the newly displayed layers.
-  selectedRegions = [];
-  boundaryLayer.eachLayer(layer => {
-    selectedRegions.push(layer);
-  });
-  try {
-    const bounds = boundaryLayer.getBounds();
-    if (bounds.isValid()) {
-      map.fitBounds(bounds, { padding: [50, 50] });
-    }
-  } catch (e) {
-    console.error(e);
-  }
-}
-
-// Load point data based on the currently selected regions and zoom level.
-// This function is triggered when the user clicks the "Load Data" button.
-function loadData() {
-  const dataType = document.getElementById('data-type').value;
-  if (!dataType) return;
-  if (selectedRegions.length === 0) {
-    alert("Please select one or more regions (or apply a budget filter) before loading data.");
-    return;
-  }
-  fetch(`/data?collection=${dataType}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log('DEBUG: Data from Flask:', data);
-      if (geoJsonLayer) {
-        map.removeLayer(geoJsonLayer);
+      const name = rawName && rawName.trim() ? fix_encoding(rawName) : '';
+      return matchingRegions.includes(name);
+    });
+    boundaryLayer = L.geoJSON({
+      type: "FeatureCollection",
+      features: filteredFeatures
+    }, {
+      style: {
+        color: '#2196F3',
+        weight: 2,
+        opacity: 0.8,
+        fillColor: '#2196F3',
+        fillOpacity: 0.2,
+        dashArray: '3'
+      },
+      onEachFeature: function(feature, layer) {
+        const props = makePlain(feature.properties) || {};
+        const rawName = props.NOM || props.NOM_OFFICIEL;
+        const name = rawName && rawName.trim() ? fix_encoding(rawName) : 'Unknown Region';
+        layer.bindPopup(`
+          <b>${name}</b><br>
+          Type: ${props.TYPE || 'N/A'}<br>
+          Code: ${props.CODE_3C || 'N/A'}<br>
+          ${budgetToggle === "renting"
+            ? `<b>Rent Range:</b> $${regionBudgetData[name].renting.min} - $${regionBudgetData[name].renting.max} / month`
+            : `<b>Buy Range:</b> $${regionBudgetData[name].buying.min} - $${regionBudgetData[name].buying.max}`
+          }
+        `);
+        layer.on({
+          mouseover: highlightFeature,
+          mouseout: resetHighlight,
+          click: function(e) { toggleRegionSelection(e); }
+        });
       }
-      let features = data;
-      // Filter point features by checking if they fall within any selected region using Turf.js.
-      const regionPolygons = selectedRegions.map(layer => layer.feature.geometry);
-      features = features.filter(feature => {
-        if (feature.geometry && feature.geometry.type === "Point") {
-          const pt = turf.point(feature.geometry.coordinates);
-          return regionPolygons.some(poly => turf.booleanPointInPolygon(pt, poly));
-        }
-        return true;
-      });
-      // Apply zoom-level sampling: when zoomed out, show fewer points.
+    }).addTo(map);
+    selectedRegions = [];
+    boundaryLayer.eachLayer(layer => { selectedRegions.push(layer); });
+    try {
+      const bounds = boundaryLayer.getBounds();
+      if (bounds.isValid()) { map.fitBounds(bounds, { padding: [50, 50] }); }
+    } catch (e) { console.error(e); }
+  } else {
+    console.log("No budget filter applied; using full boundaries.");
+  }
+  
+  // 2. Process category filters.
+  const filterToggles = document.querySelectorAll(".filter-toggle.active");
+  let activeFilters = Array.from(filterToggles).map(btn => btn.dataset.filter);
+  if (activeFilters.length === 0) {
+    activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
+  }
+  console.log("Active category filters:", activeFilters);
+  
+  // 3. Fetch data for each active category.
+  let allFeatures = [];
+  let fetchPromises = activeFilters.map(filterType => {
+    return fetch(`/data?collection=${filterType}`)
+      .then(response => response.json())
+      .then(data => data);
+  });
+  Promise.all(fetchPromises)
+    .then(results => {
+      results.forEach(arr => { allFeatures = allFeatures.concat(arr); });
+      console.log("All features from active filters:", allFeatures);
+      // 4. Filter point features by selected region boundaries (if any).
+      let regionPolygons = [];
+      if (selectedRegions.length > 0) {
+        regionPolygons = selectedRegions.map(layer => layer.feature.geometry);
+      }
+      let filteredFeatures = allFeatures;
+      if (regionPolygons.length > 0) {
+        filteredFeatures = allFeatures.filter(feature => {
+          if (feature.geometry && feature.geometry.type === "Point") {
+            const pt = turf.point(feature.geometry.coordinates);
+            return regionPolygons.some(poly => turf.booleanPointInPolygon(pt, poly));
+          }
+          return true;
+        });
+      }
+      // 5. Apply zoom-level sampling.
       const currentZoom = map.getZoom();
       let samplingRate = 1;
-      if (currentZoom < 10) {
-        samplingRate = 0.05;
-      } else if (currentZoom < 12) {
-        samplingRate = 0.1;
-      } else if (currentZoom < 14) {
-        samplingRate = 0.5;
-      }
+      if (currentZoom < 10) { samplingRate = 0.05; }
+      else if (currentZoom < 12) { samplingRate = 0.1; }
+      else if (currentZoom < 14) { samplingRate = 0.5; }
       if (samplingRate < 1) {
-        features = features.filter(() => Math.random() < samplingRate);
+        filteredFeatures = filteredFeatures.filter(() => Math.random() < samplingRate);
       }
-      geoJsonLayer = L.geoJSON(features, {
+      if (geoJsonLayer) { map.removeLayer(geoJsonLayer); }
+      geoJsonLayer = L.geoJSON(filteredFeatures, {
         pointToLayer: function(feature, latlng) {
-          return L.marker(latlng);
+          if (feature.properties && feature.properties["Charging Station Name"]) {
+            return L.marker(latlng, { icon: evIcon });
+          } else {
+            return L.marker(latlng, { icon: houseIcon });
+          }
         },
         onEachFeature: function(feature, layer) {
           if (feature.properties) {
             let popupContent = `<b>Location Information</b><br>`;
-            if (dataType === "inspections_salubrite") {
-              popupContent += `<b>Borough:</b> ${fix_encoding(feature.properties["Borough"]) || "N/A"}<br>`;
-              popupContent += `<b>First Inspection Date:</b> ${fix_encoding(feature.properties["First Inspection Date"]) || "N/A"}<br>`;
-              popupContent += `<b>Number of Inspected Homes:</b> ${fix_encoding(feature.properties["Number of Inspected Homes"]) || "N/A"}<br>`;
-              popupContent += `<b>Reference Neighborhood:</b> ${fix_encoding(feature.properties["Reference Neighborhood"]) || "N/A"}<br>`;
-              popupContent += `<b>Inspection Status:</b> ${fix_encoding(feature.properties["Inspection Status"]) || "Inconnu"}`;
-            } else if (dataType === "bornes_recharge_publiques") {
+            if (feature.properties["Charging Station Name"]) {
               popupContent += `<b>Charging Station:</b> ${fix_encoding(feature.properties["Charging Station Name"]) || "N/A"}<br>`;
               popupContent += `<b>Location:</b> ${fix_encoding(feature.properties["Location Name"]) || "N/A"}<br>`;
               popupContent += `<b>Address:</b> ${fix_encoding(feature.properties["Address"]) || "N/A"}<br>`;
@@ -333,17 +320,116 @@ function loadData() {
               popupContent += `<b>Province:</b> ${fix_encoding(feature.properties["Province"]) || "N/A"}<br>`;
               popupContent += `<b>Charging Level:</b> ${fix_encoding(feature.properties["Charging Level"]) || "N/A"}<br>`;
               popupContent += `<b>Pricing Model:</b> ${fix_encoding(feature.properties["Pricing Model"]) || "N/A"}`;
+            } else {
+              popupContent += `<b>Borough:</b> ${fix_encoding(feature.properties["Borough"]) || "N/A"}<br>`;
+              popupContent += `<b>First Inspection Date:</b> ${fix_encoding(feature.properties["First Inspection Date"]) || "N/A"}<br>`;
+              popupContent += `<b>Number of Inspected Homes:</b> ${fix_encoding(feature.properties["Number of Inspected Homes"]) || "N/A"}<br>`;
+              popupContent += `<b>Reference Neighborhood:</b> ${fix_encoding(feature.properties["Reference Neighborhood"]) || "N/A"}<br>`;
+              popupContent += `<b>Inspection Status:</b> ${fix_encoding(feature.properties["Inspection Status"]) || "Inconnu"}`;
             }
             layer.bindPopup(popupContent);
           }
         }
       }).addTo(map);
+      // 6. Request region summary and update Mission Log.
+      getRegionSummary();
+      // 7. Automatically request the advisor plan and update the advisor chat log.
+      getAdvisorPlan();
+      // 8. Reveal the Property Advisor Chat card.
+      const advisorCard = document.getElementById("advisorChatCard");
+      if (advisorCard) { advisorCard.style.display = "block"; }
     })
-    .catch(error => console.error('Fetching error:', error));
+    .catch(error => console.error("Fetching error:", error));
 }
 
+// --- Get Region Summary ---
+// Sends search parameters to /summarize and updates the Mission Log.
+function getRegionSummary() {
+  const regionNames = selectedRegions.map(layer => {
+    const props = layer.feature.properties || {};
+    const rawName = props.NOM || props.NOM_OFFICIEL;
+    return fix_encoding(rawName);
+  });
+  const budgetOption = document.getElementById("budget-toggle").value;
+  const budgetMin = document.getElementById("budget-min").value;
+  const budgetMax = document.getElementById("budget-max").value;
+  const filterToggles = document.querySelectorAll(".filter-toggle.active");
+  let activeFilters = Array.from(filterToggles).map(btn => btn.dataset.filter);
+  if (activeFilters.length === 0) {
+    activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
+  }
+  const payload = {
+    regions: regionNames,
+    budget_option: budgetOption,
+    budget_min: budgetMin,
+    budget_max: budgetMax,
+    categories: activeFilters
+  };
+  console.log("Sending summary payload:", payload);
+  fetch('/summarize', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.summary) {
+        const missionLog = document.getElementById("missionLog");
+        if (missionLog) { missionLog.textContent = data.summary; }
+        else { console.log("Mission log element not found."); }
+      } else if (data.error) {
+        console.error("Summary error:", data.error);
+      }
+    })
+    .catch(error => console.error("Error fetching summary:", error));
+}
+
+// --- Get Advisor Plan ---
+// Automatically sends a pre-defined prompt (using the current search parameters)
+// to the /advisor endpoint and updates the advisor chat log.
+function getAdvisorPlan() {
+  const regionNames = selectedRegions.map(layer => {
+    const props = layer.feature.properties || {};
+    const rawName = props.NOM || props.NOM_OFFICIEL;
+    return fix_encoding(rawName);
+  });
+  const budgetOption = document.getElementById("budget-toggle").value;
+  const budgetMin = document.getElementById("budget-min").value;
+  const budgetMax = document.getElementById("budget-max").value;
+  const filterToggles = document.querySelectorAll(".filter-toggle.active");
+  let activeFilters = Array.from(filterToggles).map(btn => btn.dataset.filter);
+  if (activeFilters.length === 0) {
+    activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
+  }
+  const advisorPrompt = `Based on the following information:
+Regions: ${regionNames.join(", ")}
+Budget Option: ${budgetOption}
+Budget Range: ${budgetMin} to ${budgetMax}${(budgetMin && budgetMax && budgetOption.toLowerCase() === "renting") ? " per month" : ""}
+Categories: ${activeFilters.join(", ")}
+
+Please provide a detailed, step-by-step plan for a user looking to ${budgetOption === "renting" ? "rent" : "buy"} a property in Montreal. Include current interest rates, explain the "taxe de bienvenue", and list all necessary steps.`;
+  
+  console.log("Sending advisor prompt:", advisorPrompt);
+  fetch('/advisor', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: advisorPrompt })
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.advisor) {
+        const advisorChatLog = document.getElementById("advisorChatLog");
+        if (advisorChatLog) { advisorChatLog.textContent = data.advisor; }
+        else { console.log("Advisor chat log element not found."); }
+      } else if (data.error) {
+        console.error("Advisor error:", data.error);
+      }
+    })
+    .catch(error => console.error("Error fetching advisor plan:", error));
+}
+
+// --- DOMContentLoaded and UI Binding ---
 document.addEventListener('DOMContentLoaded', () => {
-  // Get DOM elements from the main page (index.html)
   const mainContainer = document.getElementById('mainContainer');
   const logoContainer = document.getElementById('logoContainer');
   const searchContainer = document.getElementById('searchContainer');
@@ -356,12 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const userInput = document.getElementById('userInput');
   const sendButton = document.getElementById('sendButton');
   const messages = document.getElementById('messages');
-  const regionSelect = document.getElementById('region-select'); // Optional dropdown
-  const loadDataButton = document.getElementById('loadDataButton'); // "Load Data" button
-  // Note: The budget filter elements are in items.html and are loaded dynamically.
-
-  // After loading items.html into the page, attach the event listener for the "Apply Budget Filter" button.
-  // We'll call this inside showContent() after setting innerHTML.
   
   function showContent() {
     mainContainer.classList.add('content-visible');
@@ -374,22 +454,31 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => response.text())
       .then(html => {
         document.getElementById('itemsContainer').innerHTML = html;
-        // Attach event listener for the budget filter button AFTER items.html is loaded:
-        const applyBudgetFilterBtn = document.getElementById('applyBudgetFilter');
-        if (applyBudgetFilterBtn) {
-          applyBudgetFilterBtn.addEventListener('click', filterRegionsByBudget);
-        }
         setTimeout(initMap, 100);
         document.querySelectorAll('.data-card').forEach((card, index) => {
           card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s forwards`;
           card.style.opacity = '0';
         });
+        const filterToggles = document.querySelectorAll('.filter-toggle');
+        filterToggles.forEach(button => {
+          button.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        });
+        const searchFiltersBtn = document.getElementById('searchFiltersButton');
+        if (searchFiltersBtn) { searchFiltersBtn.addEventListener('click', search); }
+        const advisorSendBtn = document.getElementById("advisorSendButton");
+        if (advisorSendBtn) { advisorSendBtn.addEventListener("click", sendAdvisorMessage); }
+        const advisorInput = document.getElementById("advisorUserInput");
+        if (advisorInput) {
+          advisorInput.addEventListener("keypress", (e) => { if (e.key === "Enter") { sendAdvisorMessage(); } });
+        }
       })
       .catch(error => console.error('Error loading items:', error));
   }
-
+  
   showContent();
-
+  
   function handleSearch() {
     if (!mainContent.classList.contains('visible')) {
       showContent();
@@ -399,10 +488,10 @@ document.addEventListener('DOMContentLoaded', () => {
   searchButton.addEventListener('click', handleSearch);
   searchInput.addEventListener('focus', () => { if (!mainContent.classList.contains('visible')) { searchInput.placeholder = 'Press Enter to search...'; } });
   searchInput.addEventListener('blur', () => { searchInput.placeholder = 'Type to search...'; });
-
+  
   chatToggle.addEventListener('click', () => { chatContainer.style.display = 'block'; chatToggle.style.display = 'none'; });
   closeChat.addEventListener('click', () => { chatContainer.style.display = 'none'; chatToggle.style.display = 'flex'; });
-
+  
   function addMessage(content, isUser) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
@@ -410,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
     messages.appendChild(messageDiv);
     messages.scrollTop = messages.scrollHeight;
   }
-
+  
   function addTypingIndicator() {
     const indicator = document.createElement('div');
     indicator.className = 'message ai-message typing-indicator';
@@ -419,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
     messages.scrollTop = messages.scrollHeight;
     return indicator;
   }
-
+  
   async function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
@@ -444,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
       addMessage('Sorry, there was an error connecting to the server.', false);
     }
   }
-
+  
   sendButton.addEventListener('click', sendMessage);
   userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { sendMessage(); } });
   document.addEventListener('click', (e) => {
@@ -457,9 +546,212 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   chatContainer.addEventListener('click', (e) => { e.stopPropagation(); });
 });
+
+// --- Advisor Chat Functions ---
+function sendAdvisorMessage() {
+  const input = document.getElementById("advisorUserInput");
+  const chatLog = document.getElementById("advisorChatLog");
+  const message = input.value.trim();
+  if (!message) return;
+  appendAdvisorMessage(message, true);
+  input.value = '';
+  const typingIndicator = addAdvisorTypingIndicator();
+  fetch('/advisor', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: message })
+  })
+    .then(response => response.json())
+    .then(data => {
+      typingIndicator.remove();
+      if (data.advisor) {
+        appendAdvisorMessage(data.advisor, false);
+      } else if (data.error) {
+        appendAdvisorMessage("Sorry, there was an error: " + data.error, false);
+      }
+    })
+    .catch(error => {
+      typingIndicator.remove();
+      appendAdvisorMessage("Sorry, there was an error connecting to the server.", false);
+    });
+}
+function appendAdvisorMessage(text, isUser) {
+  const chatLog = document.getElementById("advisorChatLog");
+  const msgDiv = document.createElement("div");
+  msgDiv.className = "message " + (isUser ? "user-message" : "advisor-message");
+  msgDiv.textContent = text;
+  chatLog.appendChild(msgDiv);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+function addAdvisorTypingIndicator() {
+  const chatLog = document.getElementById("advisorChatLog");
+  const indicator = document.createElement("div");
+  indicator.className = "message advisor-message typing-indicator";
+  indicator.innerHTML = `<div class="dot"></div><div class="dot"></div><div class="dot"></div>`;
+  chatLog.appendChild(indicator);
+  chatLog.scrollTop = chatLog.scrollHeight;
+  return indicator;
+}
+// Automatically request the advisor plan after search.
+function getAdvisorPlan() {
+  const regionNames = selectedRegions.map(layer => {
+    const props = layer.feature.properties || {};
+    const rawName = props.NOM || props.NOM_OFFICIEL;
+    return fix_encoding(rawName);
+  });
+  const budgetOption = document.getElementById("budget-toggle").value;
+  const budgetMin = document.getElementById("budget-min").value;
+  const budgetMax = document.getElementById("budget-max").value;
+  const filterToggles = document.querySelectorAll(".filter-toggle.active");
+  let activeFilters = Array.from(filterToggles).map(btn => btn.dataset.filter);
+  if (activeFilters.length === 0) {
+    activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
+  }
+  const advisorPrompt = `Based on the following information:
+Regions: ${regionNames.join(", ")}
+Budget Option: ${budgetOption}
+Budget Range: ${budgetMin} to ${budgetMax}${(budgetMin && budgetMax && budgetOption.toLowerCase() === "renting") ? " per month" : ""}
+Categories: ${activeFilters.join(", ")}
+
+Please provide a detailed, step-by-step plan for a user looking to ${budgetOption === "renting" ? "rent" : "buy"} a property in Montreal. Include current interest rates, explain the 'taxe de bienvenue', and list all necessary steps.`;
   
-// Expose functions to global scope for inline HTML usage.
+  console.log("Sending advisor prompt:", advisorPrompt);
+  fetch('/advisor', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: advisorPrompt })
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.advisor) {
+        const advisorChatLog = document.getElementById("advisorChatLog");
+        if (advisorChatLog) { advisorChatLog.textContent = data.advisor; }
+        else { console.log("Advisor chat log element not found."); }
+      } else if (data.error) {
+        console.error("Advisor error:", data.error);
+      }
+    })
+    .catch(error => console.error("Error fetching advisor plan:", error));
+}
+
+// --- DOMContentLoaded and UI Binding ---
+document.addEventListener('DOMContentLoaded', () => {
+  const mainContainer = document.getElementById('mainContainer');
+  const logoContainer = document.getElementById('logoContainer');
+  const searchContainer = document.getElementById('searchContainer');
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
+  const mainContent = document.getElementById('mainContent');
+  const chatToggle = document.getElementById('chatToggle');
+  const chatContainer = document.getElementById('chatContainer');
+  const closeChat = document.getElementById('closeChat');
+  const userInput = document.getElementById('userInput');
+  const sendButton = document.getElementById('sendButton');
+  const messages = document.getElementById('messages');
+  
+  function showContent() {
+    mainContainer.classList.add('content-visible');
+    logoContainer.classList.add('minimized');
+    searchContainer.style.transform = 'translateY(-20px)';
+    setTimeout(() => { searchContainer.style.transform = 'translateY(0)'; }, 300);
+    mainContent.style.display = 'block';
+    setTimeout(() => { mainContent.classList.add('visible'); }, 50);
+    fetch('items.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('itemsContainer').innerHTML = html;
+        setTimeout(initMap, 100);
+        document.querySelectorAll('.data-card').forEach((card, index) => {
+          card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s forwards`;
+          card.style.opacity = '0';
+        });
+        const filterToggles = document.querySelectorAll('.filter-toggle');
+        filterToggles.forEach(button => {
+          button.addEventListener('click', function() { this.classList.toggle('active'); });
+        });
+        const searchFiltersBtn = document.getElementById('searchFiltersButton');
+        if (searchFiltersBtn) { searchFiltersBtn.addEventListener('click', search); }
+        const advisorSendBtn = document.getElementById("advisorSendButton");
+        if (advisorSendBtn) { advisorSendBtn.addEventListener("click", sendAdvisorMessage); }
+        const advisorInput = document.getElementById("advisorUserInput");
+        if (advisorInput) {
+          advisorInput.addEventListener("keypress", (e) => { if (e.key === "Enter") { sendAdvisorMessage(); } });
+        }
+      })
+      .catch(error => console.error('Error loading items:', error));
+  }
+  
+  showContent();
+  
+  function handleSearch() {
+    if (!mainContent.classList.contains('visible')) { showContent(); }
+  }
+  searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { handleSearch(); } });
+  searchButton.addEventListener('click', handleSearch);
+  searchInput.addEventListener('focus', () => { if (!mainContent.classList.contains('visible')) { searchInput.placeholder = 'Press Enter to search...'; } });
+  searchInput.addEventListener('blur', () => { searchInput.placeholder = 'Type to search...'; });
+  
+  chatToggle.addEventListener('click', () => { chatContainer.style.display = 'block'; chatToggle.style.display = 'none'; });
+  closeChat.addEventListener('click', () => { chatContainer.style.display = 'none'; chatToggle.style.display = 'flex'; });
+  
+  function addMessage(content, isUser) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+    messageDiv.textContent = content;
+    messages.appendChild(messageDiv);
+    messages.scrollTop = messages.scrollHeight;
+  }
+  
+  function addTypingIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'message ai-message typing-indicator';
+    indicator.innerHTML = `<div class="dot"></div><div class="dot"></div><div class="dot"></div>`;
+    messages.appendChild(indicator);
+    messages.scrollTop = messages.scrollHeight;
+    return indicator;
+  }
+  
+  async function sendMessage() {
+    const message = userInput.value.trim();
+    if (!message) return;
+    addMessage(message, true);
+    userInput.value = '';
+    const typingIndicator = addTypingIndicator();
+    try {
+      const response = await fetch('/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
+      });
+      const data = await response.json();
+      typingIndicator.remove();
+      if (data.error) {
+        addMessage('Sorry, there was an error processing your request.', false);
+      } else {
+        addMessage(data.summary, false);
+      }
+    } catch (error) {
+      typingIndicator.remove();
+      addMessage('Sorry, there was an error connecting to the server.', false);
+    }
+  }
+  
+  sendButton.addEventListener('click', sendMessage);
+  userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { sendMessage(); } });
+  document.addEventListener('click', (e) => {
+    if (!chatContainer.contains(e.target) &&
+        !chatToggle.contains(e.target) &&
+        chatContainer.style.display === 'block') {
+      chatContainer.style.display = 'none';
+      chatToggle.style.display = 'flex';
+    }
+  });
+  chatContainer.addEventListener('click', (e) => { e.stopPropagation(); });
+});
+
+// Expose functions to global scope.
 window.loadData = loadData;
 window.filterRegions = filterRegions;
 window.addRegionToDropdown = addRegionToDropdown;
 window.filterRegionsByBudget = filterRegionsByBudget;
+window.search = search;

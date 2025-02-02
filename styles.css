@@ -809,22 +809,46 @@ button:hover {
 }
 
 
+
 .custom-div-icon {
     background: transparent;
     border: none;
   }
-  
   .custom-marker {
-    /* Set a font size to make the icon visible */
     font-size: 24px;
     line-height: 24px;
   }
-  
   .ev-marker i {
-    color: #007bff;  /* Blue color for EV Charging Stations */
+    color: #007bff;  /* Blue for EV Charging */
+  }
+  .house-marker i {
+    color: #28a745;  /* Green for Housing Inspections */
+  }
+  .filter-toggle {
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .filter-toggle.active {
+    background-color: #007bff;
+    color: white;
   }
   
-  .house-marker i {
-    color: #28a745;  /* Green color for Housing Inspections */
+  /* Advisor Chat Styles */
+  #advisorChatCard {
+    /* The card is initially hidden and will be shown after search */
+    margin-top: 20px;
   }
-
+  .advisor-message {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  
