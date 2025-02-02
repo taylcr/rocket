@@ -13,9 +13,7 @@
   <div class="data-grid">
     <!-- Montreal Region Map Card -->
     <div class="data-card triple-wide">
-      <div class="card-icon">
-        <i class="fas fa-map-marked-alt"></i>
-      </div>
+      
       <h3>Montreal Region Map</h3>
       <div class="card-content">
         <div class="map-controls">
@@ -28,6 +26,7 @@
               <i class="fas fa-home"></i> Housing Inspections
             </button>
           </div>
+          
           <!-- Budget filter section -->
           <div class="budget-selector">
             <label for="budget-toggle">Option:</label>
@@ -37,9 +36,10 @@
             </select>
             <input type="number" id="budget-min" placeholder="Min Budget">
             <input type="number" id="budget-max" placeholder="Max Budget">
+            <button id="searchFiltersButton">Search</button>
           </div>
-          <!-- Combined Search button -->
-          <button id="searchFiltersButton">Search</button>
+          
+          
         </div>
         <div id="map"></div>
       </div>
@@ -49,7 +49,7 @@
       <div class="card-icon">
         <i class="fas fa-file-alt"></i>
       </div>
-      <h3>Mission Log</h3>
+      <h3>Informations</h3>
       <div class="card-content">
         <div id="missionLog" class="scrollable-text-1">
           Your regional summary information will appear here.

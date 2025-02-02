@@ -40,10 +40,10 @@ function fix_encoding(text) {
   }
   return text;
 }
-function filterRegions(searchText) {
-  console.log("filterRegions called with:", searchText);
-  // Optional: implement filtering if desired.
-}
+// function filterRegions(searchText) {
+//   console.log("filterRegions called with:", searchText);
+//   // Optional: implement filtering if desired.
+// }
 
 // --- Custom Icons ---
 const evIcon = L.divIcon({
@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showContent();
     }
   }
-  searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { handleSearch(); } });
+//   searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { handleSearch(); } });
   searchButton.addEventListener('click', handleSearch);
   searchInput.addEventListener('focus', () => { if (!mainContent.classList.contains('visible')) { searchInput.placeholder = 'Press Enter to search...'; } });
   searchInput.addEventListener('blur', () => { searchInput.placeholder = 'Type to search...'; });
@@ -638,7 +638,6 @@ Please provide a detailed, step-by-step plan for a user looking to ${budgetOptio
 document.addEventListener('DOMContentLoaded', () => {
   const mainContainer = document.getElementById('mainContainer');
   const logoContainer = document.getElementById('logoContainer');
-  const searchContainer = document.getElementById('searchContainer');
   const searchInput = document.getElementById('searchInput');
   const searchButton = document.getElementById('searchButton');
   const mainContent = document.getElementById('mainContent');
@@ -652,8 +651,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function showContent() {
     mainContainer.classList.add('content-visible');
     logoContainer.classList.add('minimized');
-    searchContainer.style.transform = 'translateY(-20px)';
-    setTimeout(() => { searchContainer.style.transform = 'translateY(0)'; }, 300);
     mainContent.style.display = 'block';
     setTimeout(() => { mainContent.classList.add('visible'); }, 50);
     fetch('items.html')
