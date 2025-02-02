@@ -257,6 +257,7 @@ function initMap() {
   if (!map) {
     console.log("Creating new map instance");
     map = L.map("map").setView([45.5017, -73.5673], 12);
+
     // Replacing OpenStreetMap with Mapbox Custom Style
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/relusme/cm6mqwdfr00mm01s943kh6y0i/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVsdXNtZSIsImEiOiJjbTZtcTI4dmswb2JsMmtweWJweDJ2cThuIn0.r_rXgxgomdiVXq_Tg-bnUQ",
@@ -267,6 +268,7 @@ function initMap() {
         maxZoom: 20,
       }
     ).addTo(map);
+
     loadMontrealBoundaries();
     setTimeout(() => {
       console.log("Invalidating map size");
@@ -783,7 +785,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((html) => {
         document.getElementById("itemsContainer").innerHTML = html;
         setTimeout(initMap, 100);
+
         setTimeout(loadBikeLanes, 1000); // Load bike lanes after map is ready
+
+
         document.querySelectorAll(".data-card").forEach((card, index) => {
           card.style.animation = `fadeInUp 0.5s ease-out ${
             index * 0.1
