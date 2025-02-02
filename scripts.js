@@ -4,7 +4,7 @@ let geoJsonLayer;
 let boundaryLayer;
 let selectedRegions = []; // Holds the selected region boundaries
 let allBoundaryFeatures = []; // All boundaries loaded from DB
-
+let bikeLaneLayer = null;
 // Static budget data (fake numbers) for each Montreal region.
 const regionBudgetData = {
   "Ahuntsic-Cartierville": {
@@ -268,6 +268,41 @@ function initMap() {
     }, 200);
   }
 }
+
+// Function to load and display bike lanes on the map
+function loadBikeLanes() {
+  fetch("/data?collection=reseau_cyclable")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Bike Lanes Data Loaded:", data);
+
+      // Create a GeoJSON layer for bike lanes
+      const bikeLaneLayer = L.geoJSON(data, {
+        style: function (feature) {
+          return {
+            color: "#e1e348", // Orange-red color for bike lanes
+            weight: 1.5, // Line thickness
+            opacity: 0.4,
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          if (feature.properties) {
+            const name =
+              feature.properties.NOM_ARR_VILLE_DESC || "Unknown Area";
+            const type = feature.properties.TYPE_VOIE_DESC || "Unknown Type";
+            layer.bindPopup(
+              `<b>Bike Lane</b><br>Area: ${name}<br>Type: ${type}`
+            );
+          }
+        },
+      });
+
+      // Add the bike lanes layer to the existing map
+      bikeLaneLayer.addTo(map);
+    })
+    .catch((error) => console.error("Error loading bike lanes:", error));
+}
+
 function loadMontrealBoundaries() {
   fetch("/data?collection=limites_administratives_agglomeration")
     .then((response) => response.json())
@@ -360,6 +395,9 @@ function toggleRegionSelection(e) {
     selectedRegions.splice(index, 1);
     boundaryLayer.resetStyle(layer);
   }
+
+  //Reload bike lanes based on selected regions
+  filterBikeLanesByRegion();
 }
 function addRegionToDropdown(name, feature) {
   const select = document.getElementById("region-select");
