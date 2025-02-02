@@ -1,0 +1,4 @@
+run this to download the requirements
+
+
+pip install -r requirements.txt
