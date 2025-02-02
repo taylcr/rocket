@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, send_from_directory
 from pymongo import MongoClient
 from openai import OpenAI
+from bson import json_util
+import json
 import os
 
 app = Flask(__name__)
@@ -13,7 +15,7 @@ db = mongo_client['montreal_data']
 # 🔹 OpenAI Client
 openai_client = OpenAI(api_key="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")
 
-# 🔹 Translation Mapping
+# 🔹 Translation Mapping for specific collections
 INSPECTIONS_TRANSLATION = {
     "arrondissement": "Borough",
     "date_premiere_inspection": "First Inspection Date",
@@ -41,8 +43,8 @@ def fix_encoding(text):
         try:
             return text.encode('latin1').decode('utf-8')
         except UnicodeEncodeError:
-            return text  
-    return text  
+            return text
+    return text
 
 # 🔹 Serve Static Files (HTML, JS, CSS)
 @app.route('/')
@@ -61,31 +63,35 @@ def get_data():
         collection = db[collection_name]
         features = list(collection.find({}, {'_id': 0}))
 
+        # Convert BSON objects to plain JSON objects
+        features = json.loads(json_util.dumps(features))
+
         for feature in features:
             if "properties" in feature:
                 properties = feature["properties"]
 
+                # Only apply translation mapping for collections with a defined map
                 if collection_name == "inspections_salubrite":
                     translation_map = INSPECTIONS_TRANSLATION
                 elif collection_name == "bornes_recharge_publiques":
                     translation_map = EV_CHARGING_TRANSLATION
                 else:
-                    translation_map = {}
+                    translation_map = None  # For collections like boundaries, keep original properties
 
-                translated_properties = {
-                    translation_map.get(k, k): fix_encoding(v)
-                    for k, v in properties.items()
-                    if k in translation_map
-                }
+                if translation_map is not None:
+                    translated_properties = {
+                        translation_map.get(k, k): fix_encoding(v)
+                        for k, v in properties.items()
+                        if k in translation_map
+                    }
+                    # Ensure latitude/longitude values are preserved if available
+                    if "Latitude" not in translated_properties and "LATITUDE" in properties:
+                        translated_properties["Latitude"] = properties["LATITUDE"]
+                    if "Longitude" not in translated_properties and "LONGITUDE" in properties:
+                        translated_properties["Longitude"] = properties["LONGITUDE"]
+                    feature["properties"] = translated_properties
 
-                if "Latitude" not in translated_properties and "LATITUDE" in properties:
-                    translated_properties["Latitude"] = properties["LATITUDE"]
-                if "Longitude" not in translated_properties and "LONGITUDE" in properties:
-                    translated_properties["Longitude"] = properties["LONGITUDE"]
-
-                feature["properties"] = translated_properties
-
-        print("DEBUG: Data Sent to Frontend:", features[:5])  
+        print("DEBUG: Data Sent to Frontend:", features[:5])
         return jsonify(features)
 
     return jsonify([])
@@ -96,15 +102,17 @@ def analyze():
     try:
         data = request.get_json()
         user_message = data.get('message', '')
-        
+
         if not user_message:
             return jsonify({'error': 'No message provided'}), 400
-        
-        system_message = """You are a helpful assistant. You can:
-        1. Answer questions about the data
-        2. Provide insights and analysis
-        3. Help with searching and filtering
-        Keep responses concise and informative."""
+
+        system_message = (
+            "You are a helpful assistant. You can:\n"
+            "1. Answer questions about the data\n"
+            "2. Provide insights and analysis\n"
+            "3. Help with searching and filtering\n"
+            "Keep responses concise and informative."
+        )
 
         messages = [
             {"role": "system", "content": system_message},
@@ -120,7 +128,7 @@ def analyze():
 
         assistant_response = response.choices[0].message.content
         return jsonify({'summary': assistant_response})
-        
+
     except Exception as e:
         return jsonify({'error': f'Error processing message: {str(e)}'}), 500
 
