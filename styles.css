@@ -1017,6 +1017,11 @@ button:hover {
     transform: scale(0.95);
 }
 
+.custom-marker.crime-marker {
+    color: rgb(137, 137, 23);
+}
+
+
 /* Responsive Styling */
 @media (max-width: 768px) {
     .budget-selector {

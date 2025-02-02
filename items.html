@@ -13,7 +13,6 @@
   <div class="data-grid">
     <!-- Montreal Region Map Card -->
     <div class="data-card triple-wide">
-      
       <h3>Montreal Region Map</h3>
       <div class="card-content">
         <div class="map-controls">
@@ -24,6 +23,15 @@
             </button>
             <button class="filter-toggle" data-filter="inspections_salubrite">
               <i class="fas fa-home"></i> Housing Inspections
+            </button>
+            <button class="filter-toggle" data-filter="actes_criminels">
+              <i class="fas fa-exclamation-triangle"></i> Criminal Acts
+            </button>
+            <button class="filter-toggle" data-filter="indice_emv_2024">
+              <i class="fas fa-chart-line"></i> EMV Index
+            </button>
+            <button class="filter-toggle" data-filter="programmation_sports_loisirs_montreal">
+              <i class="fas fa-futbol"></i> Sports & Leisure
             </button>
           </div>
           
@@ -38,8 +46,6 @@
             <input type="number" id="budget-max" placeholder="Max Budget">
             <button id="searchFiltersButton">Search</button>
           </div>
-          
-          
         </div>
         <div id="map"> <div id="map">
             <div id="legend">

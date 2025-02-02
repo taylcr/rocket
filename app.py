@@ -1,23 +1,32 @@
 from flask import Flask, request, jsonify, send_from_directory
 from pymongo import MongoClient
-from bson import json_util  # for converting BSON to JSON
+from bson import json_util  # For converting BSON to JSON
 from openai import OpenAI
 import json
 import os
 
 app = Flask(__name__)
 
-# 🔹 MongoDB Connection
+# ---------------------------
+# MongoDB Connection
+# ---------------------------
 uri = "mongodb+srv://Taylor:B8rurrb8tfUD2utW@rocket.j790k.mongodb.net/?retryWrites=true&w=majority&appName=rocket"
 mongo_client = MongoClient(uri)
 db = mongo_client['montreal_data']
 
-# 🔹 OpenAI Client for chatbot (existing)
+# ---------------------------
+# OpenAI Clients
+# ---------------------------
+# Existing chatbot client
 openai_client = OpenAI(api_key="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")
-# 🔹 OpenAI Client for region summaries and advisor chat (new)
+# Client for region summaries and advisor chat
 openai_summary_client = OpenAI(api_key="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")
 
-# 🔹 Translation Mapping for specific collections
+# ---------------------------
+# Translation Mappings for Collections
+# ---------------------------
+
+# Existing translations
 INSPECTIONS_TRANSLATION = {
     "arrondissement": "Borough",
     "date_premiere_inspection": "First Inspection Date",
@@ -34,11 +43,36 @@ EV_CHARGING_TRANSLATION = {
     "PROVINCE": "Province",
     "NIVEAU_RECHARGE": "Charging Level",
     "MODE_TARIFICATION": "Pricing Model",
-    "TYPE_EMPLACEMENT": "Location Type",
-    "LONGITUDE": "Longitude",
-    "LATITUDE": "Latitude"
+    "TYPE_EMPLACEMENT": "Location Type"
+    # Note: We omit latitude and longitude here because we will add them later.
 }
 
+# New mapping for actes_criminels – only relevant display fields
+ACTES_CRIMINELS_TRANSLATION = {
+    "CATEGORIE": "Category",
+    "DATE": "Date",
+    "QUART": "Period"
+    # We intentionally do not include "Y", "LONGITUDE", or "LATITUDE"
+}
+
+# New mapping for indice_emv_2024 – only a couple of key fields
+INDICE_EMV_TRANSLATION = {
+    "arr_ville": "Arrondissement",
+    "Indice_emv": "EMV Index"
+}
+
+# New mapping for programmation_sports_loisirs_montreal – only a few fields for display
+SPORTS_TRANSLATION = {
+    "nom": "Name",
+    "categorie": "Category",
+    "date_debut": "Start Date",
+    "date_fin": "End Date",
+    "promoteur": "Promoter"
+}
+
+# ---------------------------
+# Helper Function
+# ---------------------------
 def fix_encoding(text):
     if isinstance(text, str):
         try:
@@ -47,7 +81,9 @@ def fix_encoding(text):
             return text
     return text  
 
-# 🔹 Serve Static Files
+# ---------------------------
+# Serve Static Files
+# ---------------------------
 @app.route('/')
 def index():
     return send_from_directory(os.getcwd(), 'index.html')
@@ -56,7 +92,9 @@ def index():
 def static_files(filename):
     return send_from_directory(os.getcwd(), filename)
 
-# 🔹 Fetch Data from MongoDB
+# ---------------------------
+# Fetch Data from MongoDB with Optional Field Translations
+# ---------------------------
 @app.route('/data', methods=['GET'])
 def get_data():
     collection_name = request.args.get('collection')
@@ -67,17 +105,27 @@ def get_data():
         for feature in features:
             if "properties" in feature:
                 properties = feature["properties"]
+                # Choose translation map based on collection name
                 if collection_name == "inspections_salubrite":
                     translation_map = INSPECTIONS_TRANSLATION
                 elif collection_name == "bornes_recharge_publiques":
                     translation_map = EV_CHARGING_TRANSLATION
+                elif collection_name == "actes_criminels":
+                    translation_map = ACTES_CRIMINELS_TRANSLATION
+                elif collection_name == "indice_emv_2024":
+                    translation_map = INDICE_EMV_TRANSLATION
+                elif collection_name == "programmation_sports_loisirs_montreal":
+                    translation_map = SPORTS_TRANSLATION
                 else:
                     translation_map = None
+
                 if translation_map is not None:
+                    # Only fetch keys specified in the translation mapping.
                     translated_properties = {
                         translation_map.get(k, k): fix_encoding(v)
                         for k, v in properties.items() if k in translation_map
                     }
+                    # Always add Latitude and Longitude (if present) for use in JavaScript.
                     if "Latitude" not in translated_properties and "LATITUDE" in properties:
                         translated_properties["Latitude"] = properties["LATITUDE"]
                     if "Longitude" not in translated_properties and "LONGITUDE" in properties:
@@ -87,7 +135,9 @@ def get_data():
         return jsonify(features)
     return jsonify([])
 
-# 🔹 Chatbot Route (existing)
+# ---------------------------
+# Chatbot Route (existing)
+# ---------------------------
 @app.route('/analyze', methods=['POST'])
 def analyze():
     try:
@@ -110,14 +160,19 @@ def analyze():
             model="gpt-3.5-turbo",
             messages=messages,
             max_tokens=150,
-            temperature=0.7
+            temperature=0.7,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
         )
         assistant_response = response.choices[0].message.content
         return jsonify({'summary': assistant_response})
     except Exception as e:
         return jsonify({'error': f'Error processing message: {str(e)}'}), 500
 
-# 🔹 Region Summary Route (existing)
+# ---------------------------
+# Region Summary Route (existing)
+# ---------------------------
 @app.route('/summarize', methods=['POST'])
 def summarize():
     try:
@@ -148,20 +203,23 @@ def summarize():
                 {"role": "user", "content": prompt}
             ],
             max_tokens=200,
-            temperature=0.7
+            temperature=0.7,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
         )
         summary = response.choices[0].message.content
         return jsonify({"summary": summary})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# 🔹 Advisor Chat Route (new)
+# ---------------------------
+# Advisor Chat Route (new)
+# ---------------------------
 @app.route('/advisor', methods=['POST'])
 def advisor():
     try:
         data = request.get_json()
-        # Here we do not use the user's raw message; instead we use a system‑generated prompt.
-        # (In our implementation, getAdvisorPlan() sends a pre‑formatted prompt.)
         user_message = data.get('message', '')
         system_message = (
             "You are a property advisor specializing in Montreal real estate. "
@@ -177,12 +235,18 @@ def advisor():
             model="gpt-3.5-turbo",
             messages=messages,
             max_tokens=250,
-            temperature=0.7
+            temperature=0.7,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0
         )
         advisor_response = response.choices[0].message.content
         return jsonify({'advisor': advisor_response})
     except Exception as e:
         return jsonify({'error': f'Error processing advisor message: {str(e)}'}), 500
 
+# ---------------------------
+# Run the Application
+# ---------------------------
 if __name__ == '__main__':
     app.run(debug=True)

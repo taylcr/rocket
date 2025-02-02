@@ -5,207 +5,88 @@ let boundaryLayer;
 let selectedRegions = []; // Holds the selected region boundaries
 let allBoundaryFeatures = []; // All boundaries loaded from DB
 let bikeLaneLayer = null;
+
 // Static budget data
 const regionBudgetData = {
   "Ahuntsic-Cartierville": {
-    renting: {
-      min: 1999,
-      max: 3955,
-    },
-    buying: {
-      min: 383484,
-      max: 930929,
-    },
+    renting: { min: 1999, max: 3955 },
+    buying: { min: 383484, max: 930929 },
   },
   Anjou: {
-    renting: {
-      min: 1958,
-      max: 3353,
-    },
-    buying: {
-      min: 373748,
-      max: 733719,
-    },
+    renting: { min: 1958, max: 3353 },
+    buying: { min: 373748, max: 733719 },
   },
   "Cote-des-Neiges-Notre-Dame-de-Grace": {
-    renting: {
-      min: 2278,
-      max: 4907,
-    },
-    buying: {
-      min: 449624,
-      max: 1287520,
-    },
+    renting: { min: 2278, max: 4907 },
+    buying: { min: 449624, max: 1287520 },
   },
   "Cote-Saint-Luc": {
-    renting: {
-      min: 2798,
-      max: 4636,
-    },
-    buying: {
-      min: 572919,
-      max: 1165378,
-    },
+    renting: { min: 2798, max: 4636 },
+    buying: { min: 572919, max: 1165378 },
   },
   "Dollard-des-Ormeaux": {
-    renting: {
-      min: 1841,
-      max: 3753,
-    },
-    buying: {
-      min: 350935,
-      max: 872125,
-    },
+    renting: { min: 1841, max: 3753 },
+    buying: { min: 350935, max: 872125 },
   },
   Hampstead: {
-    renting: {
-      min: 1841,
-      max: 9945,
-    },
-    buying: {
-      min: 350935,
-      max: 3160600,
-    },
+    renting: { min: 1841, max: 9945 },
+    buying: { min: 350935, max: 3160600 },
   },
   Kirkland: {
-    renting: {
-      min: 1841,
-      max: 4110,
-    },
-    buying: {
-      min: 350935,
-      max: 959638,
-    },
+    renting: { min: 1841, max: 4110 },
+    buying: { min: 350935, max: 959638 },
   },
   "L Ile Bizard Sainte Genevieve": {
-    renting: {
-      min: 1841,
-      max: 3519,
-    },
-    buying: {
-      min: 350935,
-      max: 796012,
-    },
+    renting: { min: 1841, max: 3519 },
+    buying: { min: 350935, max: 796012 },
   },
   LaSalle: {
-    renting: {
-      min: 2236,
-      max: 3462,
-    },
-    buying: {
-      min: 437942,
-      max: 762018,
-    },
+    renting: { min: 2236, max: 3462 },
+    buying: { min: 437942, max: 762018 },
   },
   Lachine: {
-    renting: {
-      min: 2059,
-      max: 3443,
-    },
-    buying: {
-      min: 397406,
-      max: 763256,
-    },
+    renting: { min: 2059, max: 3443 },
+    buying: { min: 397406, max: 763256 },
   },
   "Le Plateau-Mont-Royal": {
-    renting: {
-      min: 2588,
-      max: 4620,
-    },
-    buying: {
-      min: 526565,
-      max: 1188488,
-    },
+    renting: { min: 2588, max: 4620 },
+    buying: { min: 526565, max: 1188488 },
   },
   "Le Sud-Ouest": {
-    renting: {
-      min: 2543,
-      max: 3891,
-    },
-    buying: {
-      min: 519786,
-      max: 921651,
-    },
+    renting: { min: 2543, max: 3891 },
+    buying: { min: 519786, max: 921651 },
   },
   "Mercier-Hochelaga-Maisonneuve": {
-    renting: {
-      min: 2061,
-      max: 3454,
-    },
-    buying: {
-      min: 397284,
-      max: 776501,
-    },
+    renting: { min: 2061, max: 3454 },
+    buying: { min: 397284, max: 776501 },
   },
   "Mont-Royal": {
-    renting: {
-      min: 1833,
-      max: 5144,
-    },
-    buying: {
-      min: 347948,
-      max: 1347682,
-    },
+    renting: { min: 1833, max: 5144 },
+    buying: { min: 347948, max: 1347682 },
   },
   "Montreal-Est": {
-    renting: {
-      min: 1833,
-      max: 2382,
-    },
-    buying: {
-      min: 347948,
-      max: 467314,
-    },
+    renting: { min: 1833, max: 2382 },
+    buying: { min: 347948, max: 467314 },
   },
   "Montreal-Nord": {
-    renting: {
-      min: 1833,
-      max: 3332,
-    },
-    buying: {
-      min: 347948,
-      max: 740735,
-    },
+    renting: { min: 1833, max: 3332 },
+    buying: { min: 347948, max: 740735 },
   },
   "Montreal-Ouest": {
-    renting: {
-      min: 2638,
-      max: 4312,
-    },
-    buying: {
-      min: 534221,
-      max: 1041956,
-    },
+    renting: { min: 2638, max: 4312 },
+    buying: { min: 534221, max: 1041956 },
   },
   Outremont: {
-    renting: {
-      min: 3426,
-      max: 5911,
-    },
-    buying: {
-      min: 766710,
-      max: 1663648,
-    },
+    renting: { min: 3426, max: 5911 },
+    buying: { min: 766710, max: 1663648 },
   },
   "Pierrefonds-Roxboro": {
-    renting: {
-      min: 1930,
-      max: 3440,
-    },
-    buying: {
-      min: 369347,
-      max: 735050,
-    },
+    renting: { min: 1930, max: 3440 },
+    buying: { min: 369347, max: 735050 },
   },
   "Riviere-des-Prairies-Pointe-aux-Trembles": {
-    renting: {
-      min: 1692,
-      max: 2836,
-    },
-    buying: {
-      min: 317795,
-      max: 594172,
-    },
+    renting: { min: 1692, max: 2836 },
+    buying: { min: 317795, max: 594172 },
   },
 };
 
@@ -227,10 +108,6 @@ function fix_encoding(text) {
   }
   return text;
 }
-// function filterRegions(searchText) {
-//   console.log("filterRegions called with:", searchText);
-//   // Optional: implement filtering if desired.
-// }
 
 // --- Custom Icons ---
 const evIcon = L.divIcon({
@@ -241,6 +118,24 @@ const evIcon = L.divIcon({
 });
 const houseIcon = L.divIcon({
   html: "<div class='custom-marker house-marker'><i class='fas fa-home'></i></div>",
+  className: "custom-div-icon",
+  iconSize: [30, 42],
+  iconAnchor: [15, 42],
+});
+const crimeIcon = L.divIcon({
+  html: "<div class='custom-marker crime-marker'><i class='fas fa-exclamation-triangle'></i></div>",
+  className: "custom-div-icon",
+  iconSize: [30, 42],
+  iconAnchor: [15, 42],
+});
+const emvIcon = L.divIcon({
+  html: "<div class='custom-marker emv-marker'><i class='fas fa-chart-line'></i></div>",
+  className: "custom-div-icon",
+  iconSize: [30, 42],
+  iconAnchor: [15, 42],
+});
+const sportIcon = L.divIcon({
+  html: "<div class='custom-marker sport-marker'><i class='fas fa-futbol'></i></div>",
   className: "custom-div-icon",
   iconSize: [30, 42],
   iconAnchor: [15, 42],
@@ -257,8 +152,7 @@ function initMap() {
   if (!map) {
     console.log("Creating new map instance");
     map = L.map("map").setView([45.5017, -73.5673], 12);
-
-    // Replacing OpenStreetMap with Mapbox Custom Style
+    // Mapbox custom style
     L.tileLayer(
       "https://api.mapbox.com/styles/v1/relusme/cm6mqwdfr00mm01s943kh6y0i/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVsdXNtZSIsImEiOiJjbTZtcTI4dmswb2JsMmtweWJweDJ2cThuIn0.r_rXgxgomdiVXq_Tg-bnUQ",
       {
@@ -277,20 +171,17 @@ function initMap() {
   }
 }
 
-// Function to load and display bike lanes on the map
 
 function loadBikeLanes() {
   fetch("/data?collection=reseau_cyclable")
     .then((response) => response.json())
     .then((data) => {
       console.log("Bike Lanes Data Loaded:", data);
-
-      // Create a GeoJSON layer for bike lanes
       const bikeLaneLayer = L.geoJSON(data, {
         style: function (feature) {
           return {
-            color: "#e1e348", // Orange-red color for bike lanes
-            weight: 1.5, // Line thickness
+            color: "#e1e348",
+            weight: 1.5,
             opacity: 0.4,
           };
         },
@@ -305,8 +196,6 @@ function loadBikeLanes() {
           }
         },
       });
-
-      // Add the bike lanes layer to the existing map
       bikeLaneLayer.addTo(map);
     })
     .catch((error) => console.error("Error loading bike lanes:", error));
@@ -341,10 +230,10 @@ function loadMontrealBoundaries() {
                 ? fix_encoding(rawName)
                 : "Unknown Region";
             layer.bindPopup(`
-            <b>${name}</b><br>
-            Type: ${props.TYPE || "N/A"}<br>
-            Code: ${props.CODE_3C || "N/A"}
-          `);
+              <b>${name}</b><br>
+              Type: ${props.TYPE || "N/A"}<br>
+              Code: ${props.CODE_3C || "N/A"}
+            `);
             layer.on({
               mouseover: highlightFeature,
               mouseout: resetHighlight,
@@ -404,8 +293,7 @@ function toggleRegionSelection(e) {
     selectedRegions.splice(index, 1);
     boundaryLayer.resetStyle(layer);
   }
-
-  //Reload bike lanes based on selected regions
+  // Reload bike lanes based on selected regions
   filterBikeLanesByRegion();
 }
 function addRegionToDropdown(name, feature) {
@@ -427,10 +315,8 @@ function addRegionToDropdown(name, feature) {
 }
 
 // --- Combined Search Function ---
-// Applies a budget filter (if provided), loads point data, requests a region summary,
-// and automatically retrieves a property advisor plan.
 function search() {
-  // 1. Apply budget filter if budget values are provided.
+  // 1. Apply budget filter if provided.
   const budgetMinElem = document.getElementById("budget-min");
   const budgetMaxElem = document.getElementById("budget-max");
   if (budgetMinElem.value !== "" && budgetMaxElem.value !== "") {
@@ -485,15 +371,15 @@ function search() {
               ? fix_encoding(rawName)
               : "Unknown Region";
           layer.bindPopup(`
-          <b>${name}</b><br>
-          Type: ${props.TYPE || "N/A"}<br>
-          Code: ${props.CODE_3C || "N/A"}<br>
-          ${
-            budgetToggle === "renting"
-              ? `<b>Rent Range:</b> $${regionBudgetData[name].renting.min} - $${regionBudgetData[name].renting.max} / month`
-              : `<b>Buy Range:</b> $${regionBudgetData[name].buying.min} - $${regionBudgetData[name].buying.max}`
-          }
-        `);
+            <b>${name}</b><br>
+            Type: ${props.TYPE || "N/A"}<br>
+            Code: ${props.CODE_3C || "N/A"}<br>
+            ${
+              budgetToggle === "renting"
+                ? `<b>Rent Range:</b> $${regionBudgetData[name].renting.min} - $${regionBudgetData[name].renting.max} / month`
+                : `<b>Buy Range:</b> $${regionBudgetData[name].buying.min} - $${regionBudgetData[name].buying.max}`
+            }
+          `);
           layer.on({
             mouseover: highlightFeature,
             mouseout: resetHighlight,
@@ -522,9 +408,7 @@ function search() {
 
   // 2. Process category filters.
   const filterToggles = document.querySelectorAll(".filter-toggle.active");
-  let activeFilters = Array.from(filterToggles).map(
-    (btn) => btn.dataset.filter
-  );
+  let activeFilters = Array.from(filterToggles).map((btn) => btn.dataset.filter);
   if (activeFilters.length === 0) {
     activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
   }
@@ -571,80 +455,75 @@ function search() {
         samplingRate = 0.5;
       }
       if (samplingRate < 1) {
-        filteredFeatures = filteredFeatures.filter(
-          () => Math.random() < samplingRate
-        );
+        filteredFeatures = filteredFeatures.filter(() => Math.random() < samplingRate);
       }
       if (geoJsonLayer) {
         map.removeLayer(geoJsonLayer);
       }
+      // 6. Create a GeoJSON layer with custom point-to-layer and popup content logic.
       geoJsonLayer = L.geoJSON(filteredFeatures, {
         pointToLayer: function (feature, latlng) {
-          if (
-            feature.properties &&
-            feature.properties["Charging Station Name"]
-          ) {
+          const props = feature.properties || {};
+          if (props["Charging Station Name"]) {
             return L.marker(latlng, { icon: evIcon });
-          } else {
+          } else if (props["First Inspection Date"]) {
             return L.marker(latlng, { icon: houseIcon });
+          } else if (props["Category"] && props["Date"] && props["Period"]) {
+            return L.marker(latlng, { icon: crimeIcon });
+          } else if (props["EMV Index"]) {
+            return L.marker(latlng, { icon: emvIcon });
+          } else if (props["Name"] && props["Start Date"]) {
+            return L.marker(latlng, { icon: sportIcon });
+          } else {
+            return L.marker(latlng);
           }
         },
         onEachFeature: function (feature, layer) {
           if (feature.properties) {
+            let props = feature.properties;
             let popupContent = `<b>Location Information</b><br>`;
-            if (feature.properties["Charging Station Name"]) {
-              popupContent += `<b>Charging Station:</b> ${
-                fix_encoding(feature.properties["Charging Station Name"]) ||
-                "N/A"
-              }<br>`;
-              popupContent += `<b>Location:</b> ${
-                fix_encoding(feature.properties["Location Name"]) || "N/A"
-              }<br>`;
-              popupContent += `<b>Address:</b> ${
-                fix_encoding(feature.properties["Address"]) || "N/A"
-              }<br>`;
-              popupContent += `<b>City:</b> ${
-                fix_encoding(feature.properties["City"]) || "N/A"
-              }<br>`;
-              popupContent += `<b>Province:</b> ${
-                fix_encoding(feature.properties["Province"]) || "N/A"
-              }<br>`;
-              popupContent += `<b>Charging Level:</b> ${
-                fix_encoding(feature.properties["Charging Level"]) || "N/A"
-              }<br>`;
-              popupContent += `<b>Pricing Model:</b> ${
-                fix_encoding(feature.properties["Pricing Model"]) || "N/A"
-              }`;
+            if (props["Charging Station Name"]) {
+              popupContent += `<b>Charging Station:</b> ${props["Charging Station Name"] || "N/A"}<br>`;
+              popupContent += `<b>Location:</b> ${props["Location Name"] || "N/A"}<br>`;
+              popupContent += `<b>Address:</b> ${props["Address"] || "N/A"}<br>`;
+              popupContent += `<b>City:</b> ${props["City"] || "N/A"}<br>`;
+              popupContent += `<b>Province:</b> ${props["Province"] || "N/A"}<br>`;
+              popupContent += `<b>Charging Level:</b> ${props["Charging Level"] || "N/A"}<br>`;
+              popupContent += `<b>Pricing Model:</b> ${props["Pricing Model"] || "N/A"}`;
+            } else if (props["First Inspection Date"]) {
+              popupContent += `<b>Borough:</b> ${props["Borough"] || "N/A"}<br>`;
+              popupContent += `<b>First Inspection Date:</b> ${props["First Inspection Date"] || "N/A"}<br>`;
+              popupContent += `<b>Number of Inspected Homes:</b> ${props["Number of Inspected Homes"] || "N/A"}<br>`;
+              popupContent += `<b>Reference Neighborhood:</b> ${props["Reference Neighborhood"] || "N/A"}<br>`;
+              popupContent += `<b>Inspection Status:</b> ${props["Inspection Status"] || "Inconnu"}`;
+            } else if (props["Category"] && props["Date"] && props["Period"]) {
+              // Criminal Acts popup
+              popupContent += `<b>Category:</b> ${props["Category"] || "N/A"}<br>`;
+              popupContent += `<b>Date:</b> ${props["Date"] || "N/A"}<br>`;
+              popupContent += `<b>Period:</b> ${props["Period"] || "N/A"}`;
+            } else if (props["EMV Index"]) {
+              // EMV Index popup
+              popupContent += `<b>Arrondissement:</b> ${props["Arrondissement"] || "N/A"}<br>`;
+              popupContent += `<b>EMV Index:</b> ${props["EMV Index"] || "N/A"}`;
+            } else if (props["Name"] && props["Start Date"]) {
+              // Sports & Leisure popup
+              popupContent += `<b>Name:</b> ${props["Name"] || "N/A"}<br>`;
+              popupContent += `<b>Category:</b> ${props["Category"] || "N/A"}<br>`;
+              popupContent += `<b>Start Date:</b> ${props["Start Date"] || "N/A"}<br>`;
+              popupContent += `<b>End Date:</b> ${props["End Date"] || "N/A"}<br>`;
+              popupContent += `<b>Promoter:</b> ${props["Promoter"] || "N/A"}`;
             } else {
-              popupContent += `<b>Borough:</b> ${
-                fix_encoding(feature.properties["Borough"]) || "N/A"
-              }<br>`;
-              popupContent += `<b>First Inspection Date:</b> ${
-                fix_encoding(feature.properties["First Inspection Date"]) ||
-                "N/A"
-              }<br>`;
-              popupContent += `<b>Number of Inspected Homes:</b> ${
-                fix_encoding(feature.properties["Number of Inspected Homes"]) ||
-                "N/A"
-              }<br>`;
-              popupContent += `<b>Reference Neighborhood:</b> ${
-                fix_encoding(feature.properties["Reference Neighborhood"]) ||
-                "N/A"
-              }<br>`;
-              popupContent += `<b>Inspection Status:</b> ${
-                fix_encoding(feature.properties["Inspection Status"]) ||
-                "Inconnu"
-              }`;
+              popupContent += "No additional information available.";
             }
             layer.bindPopup(popupContent);
           }
         },
       }).addTo(map);
-      // 6. Request region summary and update Mission Log.
+      // 7. Request region summary and update Mission Log.
       getRegionSummary();
-      // 7. Automatically request the advisor plan and update the advisor chat log.
+      // 8. Automatically request the advisor plan and update the advisor chat log.
       getAdvisorPlan();
-      // 8. Reveal the Property Advisor Chat card.
+      // 9. Reveal the Property Advisor Chat card.
       const advisorCard = document.getElementById("advisorChatCard");
       if (advisorCard) {
         advisorCard.style.display = "block";
@@ -654,7 +533,6 @@ function search() {
 }
 
 // --- Get Region Summary ---
-// Sends search parameters to /summarize and updates the Mission Log.
 function getRegionSummary() {
   const regionNames = selectedRegions.map((layer) => {
     const props = layer.feature.properties || {};
@@ -665,9 +543,7 @@ function getRegionSummary() {
   const budgetMin = document.getElementById("budget-min").value;
   const budgetMax = document.getElementById("budget-max").value;
   const filterToggles = document.querySelectorAll(".filter-toggle.active");
-  let activeFilters = Array.from(filterToggles).map(
-    (btn) => btn.dataset.filter
-  );
+  let activeFilters = Array.from(filterToggles).map((btn) => btn.dataset.filter);
   if (activeFilters.length === 0) {
     activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
   }
@@ -701,8 +577,6 @@ function getRegionSummary() {
 }
 
 // --- Get Advisor Plan ---
-// Automatically sends a pre-defined prompt (using the current search parameters)
-// to the /advisor endpoint and updates the advisor chat log.
 function getAdvisorPlan() {
   const regionNames = selectedRegions.map((layer) => {
     const props = layer.feature.properties || {};
@@ -713,267 +587,7 @@ function getAdvisorPlan() {
   const budgetMin = document.getElementById("budget-min").value;
   const budgetMax = document.getElementById("budget-max").value;
   const filterToggles = document.querySelectorAll(".filter-toggle.active");
-  let activeFilters = Array.from(filterToggles).map(
-    (btn) => btn.dataset.filter
-  );
-  if (activeFilters.length === 0) {
-    activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
-  }
-  const advisorPrompt = `Based on the following information:
-Regions: ${regionNames.join(", ")}
-Budget Option: ${budgetOption}
-Budget Range: ${budgetMin} to ${budgetMax}${
-    budgetMin && budgetMax && budgetOption.toLowerCase() === "renting"
-      ? " per month"
-      : ""
-  }
-Categories: ${activeFilters.join(", ")}
-
-Please provide a detailed, step-by-step plan for a user looking to ${
-    budgetOption === "renting" ? "rent" : "buy"
-  } a property in Montreal. Include current interest rates, explain the "taxe de bienvenue", and list all necessary steps.`;
-
-  console.log("Sending advisor prompt:", advisorPrompt);
-  fetch("/advisor", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: advisorPrompt }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.advisor) {
-        const advisorChatLog = document.getElementById("advisorChatLog");
-        if (advisorChatLog) {
-          advisorChatLog.textContent = data.advisor;
-        } else {
-          console.log("Advisor chat log element not found.");
-        }
-      } else if (data.error) {
-        console.error("Advisor error:", data.error);
-      }
-    })
-    .catch((error) => console.error("Error fetching advisor plan:", error));
-}
-
-// --- DOMContentLoaded and UI Binding ---
-document.addEventListener("DOMContentLoaded", () => {
-  const mainContainer = document.getElementById("mainContainer");
-  const logoContainer = document.getElementById("logoContainer");
-  const searchContainer = document.getElementById("searchContainer");
-  const searchInput = document.getElementById("searchInput");
-  const searchButton = document.getElementById("searchButton");
-  const mainContent = document.getElementById("mainContent");
-  const chatToggle = document.getElementById("chatToggle");
-  const chatContainer = document.getElementById("chatContainer");
-  const closeChat = document.getElementById("closeChat");
-  const userInput = document.getElementById("userInput");
-  const sendButton = document.getElementById("sendButton");
-  const messages = document.getElementById("messages");
-
-  function showContent() {
-    mainContainer.classList.add("content-visible");
-    logoContainer.classList.add("minimized");
-    searchContainer.style.transform = "translateY(-20px)";
-    setTimeout(() => {
-      searchContainer.style.transform = "translateY(0)";
-    }, 300);
-    mainContent.style.display = "block";
-    setTimeout(() => {
-      mainContent.classList.add("visible");
-    }, 50);
-    fetch("items.html")
-      .then((response) => response.text())
-      .then((html) => {
-        document.getElementById("itemsContainer").innerHTML = html;
-        setTimeout(initMap, 100);
-
-        setTimeout(loadBikeLanes, 1000); // Load bike lanes after map is ready
-
-
-        document.querySelectorAll(".data-card").forEach((card, index) => {
-          card.style.animation = `fadeInUp 0.5s ease-out ${
-            index * 0.1
-          }s forwards`;
-          card.style.opacity = "0";
-        });
-        const filterToggles = document.querySelectorAll(".filter-toggle");
-        filterToggles.forEach((button) => {
-          button.addEventListener("click", function () {
-            this.classList.toggle("active");
-          });
-        });
-        const searchFiltersBtn = document.getElementById("searchFiltersButton");
-        if (searchFiltersBtn) {
-          searchFiltersBtn.addEventListener("click", search);
-        }
-        const advisorSendBtn = document.getElementById("advisorSendButton");
-        if (advisorSendBtn) {
-          advisorSendBtn.addEventListener("click", sendAdvisorMessage);
-        }
-        const advisorInput = document.getElementById("advisorUserInput");
-        if (advisorInput) {
-          advisorInput.addEventListener("keypress", (e) => {
-            if (e.key === "Enter") {
-              sendAdvisorMessage();
-            }
-          });
-        }
-      })
-      .catch((error) => console.error("Error loading items:", error));
-  }
-
-  showContent();
-
-  function handleSearch() {
-    if (!mainContent.classList.contains("visible")) {
-      showContent();
-    }
-  }
-  //   searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { handleSearch(); } });
-  searchButton.addEventListener("click", handleSearch);
-  searchInput.addEventListener("focus", () => {
-    if (!mainContent.classList.contains("visible")) {
-      searchInput.placeholder = "Press Enter to search...";
-    }
-  });
-  searchInput.addEventListener("blur", () => {
-    searchInput.placeholder = "Type to search...";
-  });
-
-  chatToggle.addEventListener("click", () => {
-    chatContainer.style.display = "block";
-    chatToggle.style.display = "none";
-  });
-  closeChat.addEventListener("click", () => {
-    chatContainer.style.display = "none";
-    chatToggle.style.display = "flex";
-  });
-
-  function addMessage(content, isUser) {
-    const messageDiv = document.createElement("div");
-    messageDiv.className = `message ${isUser ? "user-message" : "ai-message"}`;
-    messageDiv.textContent = content;
-    messages.appendChild(messageDiv);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  function addTypingIndicator() {
-    const indicator = document.createElement("div");
-    indicator.className = "message ai-message typing-indicator";
-    indicator.innerHTML = `<div class="dot"></div><div class="dot"></div><div class="dot"></div>`;
-    messages.appendChild(indicator);
-    messages.scrollTop = messages.scrollHeight;
-    return indicator;
-  }
-
-  async function sendMessage() {
-    const message = userInput.value.trim();
-    if (!message) return;
-    addMessage(message, true);
-    userInput.value = "";
-    const typingIndicator = addTypingIndicator();
-    try {
-      const response = await fetch("/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
-      const data = await response.json();
-      typingIndicator.remove();
-      if (data.error) {
-        addMessage("Sorry, there was an error processing your request.", false);
-      } else {
-        addMessage(data.summary, false);
-      }
-    } catch (error) {
-      typingIndicator.remove();
-      addMessage("Sorry, there was an error connecting to the server.", false);
-    }
-  }
-
-  sendButton.addEventListener("click", sendMessage);
-  userInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
-  });
-  document.addEventListener("click", (e) => {
-    if (
-      !chatContainer.contains(e.target) &&
-      !chatToggle.contains(e.target) &&
-      chatContainer.style.display === "block"
-    ) {
-      chatContainer.style.display = "none";
-      chatToggle.style.display = "flex";
-    }
-  });
-  chatContainer.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
-});
-
-// --- Advisor Chat Functions ---
-function sendAdvisorMessage() {
-  const input = document.getElementById("advisorUserInput");
-  const chatLog = document.getElementById("advisorChatLog");
-  const message = input.value.trim();
-  if (!message) return;
-  appendAdvisorMessage(message, true);
-  input.value = "";
-  const typingIndicator = addAdvisorTypingIndicator();
-  fetch("/advisor", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: message }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      typingIndicator.remove();
-      if (data.advisor) {
-        appendAdvisorMessage(data.advisor, false);
-      } else if (data.error) {
-        appendAdvisorMessage("Sorry, there was an error: " + data.error, false);
-      }
-    })
-    .catch((error) => {
-      typingIndicator.remove();
-      appendAdvisorMessage(
-        "Sorry, there was an error connecting to the server.",
-        false
-      );
-    });
-}
-function appendAdvisorMessage(text, isUser) {
-  const chatLog = document.getElementById("advisorChatLog");
-  const msgDiv = document.createElement("div");
-  msgDiv.className = "message " + (isUser ? "user-message" : "advisor-message");
-  msgDiv.textContent = text;
-  chatLog.appendChild(msgDiv);
-  chatLog.scrollTop = chatLog.scrollHeight;
-}
-function addAdvisorTypingIndicator() {
-  const chatLog = document.getElementById("advisorChatLog");
-  const indicator = document.createElement("div");
-  indicator.className = "message advisor-message typing-indicator";
-  indicator.innerHTML = `<div class="dot"></div><div class="dot"></div><div class="dot"></div>`;
-  chatLog.appendChild(indicator);
-  chatLog.scrollTop = chatLog.scrollHeight;
-  return indicator;
-}
-// Automatically request the advisor plan after search.
-function getAdvisorPlan() {
-  const regionNames = selectedRegions.map((layer) => {
-    const props = layer.feature.properties || {};
-    const rawName = props.NOM || props.NOM_OFFICIEL;
-    return fix_encoding(rawName);
-  });
-  const budgetOption = document.getElementById("budget-toggle").value;
-  const budgetMin = document.getElementById("budget-min").value;
-  const budgetMax = document.getElementById("budget-max").value;
-  const filterToggles = document.querySelectorAll(".filter-toggle.active");
-  let activeFilters = Array.from(filterToggles).map(
-    (btn) => btn.dataset.filter
-  );
+  let activeFilters = Array.from(filterToggles).map((btn) => btn.dataset.filter);
   if (activeFilters.length === 0) {
     activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
   }
@@ -990,7 +604,6 @@ Categories: ${activeFilters.join(", ")}
 Please provide a detailed, step-by-step plan for a user looking to ${
     budgetOption === "renting" ? "rent" : "buy"
   } a property in Montreal. Include current interest rates, explain the 'taxe de bienvenue', and list all necessary steps.`;
-
   console.log("Sending advisor prompt:", advisorPrompt);
   fetch("/advisor", {
     method: "POST",
@@ -1040,9 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("itemsContainer").innerHTML = html;
         setTimeout(initMap, 100);
         document.querySelectorAll(".data-card").forEach((card, index) => {
-          card.style.animation = `fadeInUp 0.5s ease-out ${
-            index * 0.1
-          }s forwards`;
+          card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s forwards`;
           card.style.opacity = "0";
         });
         const filterToggles = document.querySelectorAll(".filter-toggle");
@@ -1164,6 +775,100 @@ document.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
   });
 });
+
+// --- Advisor Chat Functions ---
+function sendAdvisorMessage() {
+  const input = document.getElementById("advisorUserInput");
+  const chatLog = document.getElementById("advisorChatLog");
+  const message = input.value.trim();
+  if (!message) return;
+  appendAdvisorMessage(message, true);
+  input.value = "";
+  const typingIndicator = addAdvisorTypingIndicator();
+  fetch("/advisor", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      typingIndicator.remove();
+      if (data.advisor) {
+        appendAdvisorMessage(data.advisor, false);
+      } else if (data.error) {
+        appendAdvisorMessage("Sorry, there was an error: " + data.error, false);
+      }
+    })
+    .catch((error) => {
+      typingIndicator.remove();
+      appendAdvisorMessage("Sorry, there was an error connecting to the server.", false);
+    });
+}
+function appendAdvisorMessage(text, isUser) {
+  const chatLog = document.getElementById("advisorChatLog");
+  const msgDiv = document.createElement("div");
+  msgDiv.className = "message " + (isUser ? "user-message" : "advisor-message");
+  msgDiv.textContent = text;
+  chatLog.appendChild(msgDiv);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+function addAdvisorTypingIndicator() {
+  const chatLog = document.getElementById("advisorChatLog");
+  const indicator = document.createElement("div");
+  indicator.className = "message advisor-message typing-indicator";
+  indicator.innerHTML = `<div class="dot"></div><div class="dot"></div><div class="dot"></div>`;
+  chatLog.appendChild(indicator);
+  chatLog.scrollTop = chatLog.scrollHeight;
+  return indicator;
+}
+function getAdvisorPlan() {
+  const regionNames = selectedRegions.map((layer) => {
+    const props = layer.feature.properties || {};
+    const rawName = props.NOM || props.NOM_OFFICIEL;
+    return fix_encoding(rawName);
+  });
+  const budgetOption = document.getElementById("budget-toggle").value;
+  const budgetMin = document.getElementById("budget-min").value;
+  const budgetMax = document.getElementById("budget-max").value;
+  const filterToggles = document.querySelectorAll(".filter-toggle.active");
+  let activeFilters = Array.from(filterToggles).map((btn) => btn.dataset.filter);
+  if (activeFilters.length === 0) {
+    activeFilters = ["bornes_recharge_publiques", "inspections_salubrite"];
+  }
+  const advisorPrompt = `Based on the following information:
+Regions: ${regionNames.join(", ")}
+Budget Option: ${budgetOption}
+Budget Range: ${budgetMin} to ${budgetMax}${
+    budgetMin && budgetMax && budgetOption.toLowerCase() === "renting"
+      ? " per month"
+      : ""
+  }
+Categories: ${activeFilters.join(", ")}
+
+Please provide a detailed, step-by-step plan for a user looking to ${
+    budgetOption === "renting" ? "rent" : "buy"
+  } a property in Montreal. Include current interest rates, explain the 'taxe de bienvenue', and list all necessary steps.`;
+  console.log("Sending advisor prompt:", advisorPrompt);
+  fetch("/advisor", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: advisorPrompt }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.advisor) {
+        const advisorChatLog = document.getElementById("advisorChatLog");
+        if (advisorChatLog) {
+          advisorChatLog.textContent = data.advisor;
+        } else {
+          console.log("Advisor chat log element not found.");
+        }
+      } else if (data.error) {
+        console.error("Advisor error:", data.error);
+      }
+    })
+    .catch((error) => console.error("Error fetching advisor plan:", error));
+}
 
 // Expose functions to global scope.
 window.loadData = loadData;
