@@ -278,6 +278,7 @@ function initMap() {
 }
 
 // Function to load and display bike lanes on the map
+
 function loadBikeLanes() {
   fetch("/data?collection=reseau_cyclable")
     .then((response) => response.json())
