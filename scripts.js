@@ -278,38 +278,78 @@ function initMap() {
 }
 
 // Function to load and display bike lanes on the map
-function loadBikeLanes() {
+function loadBikeLanes(toggle = true) {
+  if (!toggle) {
+    if (bikeLaneLayer) {
+      map.removeLayer(bikeLaneLayer);
+      bikeLaneLayer = null;
+    }
+    return;
+  }
+
   fetch("/data?collection=reseau_cyclable")
     .then((response) => response.json())
     .then((data) => {
       console.log("Bike Lanes Data Loaded:", data);
 
-      // Create a GeoJSON layer for bike lanes
-      const bikeLaneLayer = L.geoJSON(data, {
-        style: function (feature) {
-          return {
-            color: "#e1e348", // Orange-red color for bike lanes
-            weight: 1.5, // Line thickness
-            opacity: 0.4,
-          };
-        },
-        onEachFeature: function (feature, layer) {
-          if (feature.properties) {
-            const name =
-              feature.properties.NOM_ARR_VILLE_DESC || "Unknown Area";
-            const type = feature.properties.TYPE_VOIE_DESC || "Unknown Type";
-            layer.bindPopup(
-              `<b>Bike Lane</b><br>Area: ${name}<br>Type: ${type}`
-            );
-          }
-        },
-      });
+      // Remove existing bike lane layer if it exists
+      if (bikeLaneLayer) {
+        map.removeLayer(bikeLaneLayer);
+      }
 
-      // Add the bike lanes layer to the existing map
+      // Filter bike lanes if regions are selected
+      let filteredData = data;
+      if (selectedRegions.length > 0) {
+        filteredData = data.features.filter((feature) => {
+          const laneCoords = feature.geometry.coordinates;
+          return selectedRegions.some((region) =>
+            turf.booleanPointInPolygon(
+              turf.point(laneCoords),
+              region.feature.geometry
+            )
+          );
+        });
+      }
+
+      // Create a new GeoJSON layer for bike lanes
+      bikeLaneLayer = L.geoJSON(
+        { type: "FeatureCollection", features: filteredData },
+        {
+          style: function (feature) {
+            return {
+              color: "#e1e348", // Yellowish color for bike lanes
+              weight: 1.5, // Line thickness
+              opacity: 0.7,
+            };
+          },
+          onEachFeature: function (feature, layer) {
+            if (feature.properties) {
+              const name =
+                feature.properties.NOM_ARR_VILLE_DESC || "Unknown Area";
+              const type = feature.properties.TYPE_VOIE_DESC || "Unknown Type";
+              layer.bindPopup(
+                `<b>Bike Lane</b><br>Area: ${name}<br>Type: ${type}`
+              );
+            }
+          },
+        }
+      );
+
+      // Add the bike lane layer to the map
       bikeLaneLayer.addTo(map);
     })
     .catch((error) => console.error("Error loading bike lanes:", error));
 }
+
+// Function to toggle bike lanes on or off
+document.addEventListener("DOMContentLoaded", () => {
+  const bikeLaneToggle = document.getElementById("bike-toggle");
+  if (bikeLaneToggle) {
+    bikeLaneToggle.addEventListener("change", () =>
+      loadBikeLanes(bikeLaneToggle.checked)
+    );
+  }
+});
 
 function loadMontrealBoundaries() {
   fetch("/data?collection=limites_administratives_agglomeration")
@@ -787,7 +827,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(initMap, 100);
 
         setTimeout(loadBikeLanes, 1000); // Load bike lanes after map is ready
-
 
         document.querySelectorAll(".data-card").forEach((card, index) => {
           card.style.animation = `fadeInUp 0.5s ease-out ${

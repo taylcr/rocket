@@ -1,80 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Items</title>
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
-</head>
-<body>
-  <div class="data-grid">
-    <!-- Montreal Region Map Card -->
-    <div class="data-card triple-wide">
-      
-      <h3>Montreal Region Map</h3>
-      <div class="card-content">
-        <div class="map-controls">
-          <!-- Category toggle buttons -->
-          <div class="filter-buttons">
-            <button class="filter-toggle" data-filter="bornes_recharge_publiques">
-              <i class="fas fa-charging-station"></i> EV Charging Stations
-            </button>
-            <button class="filter-toggle" data-filter="inspections_salubrite">
-              <i class="fas fa-home"></i> Housing Inspections
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Items</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+  </head>
+  <body>
+    <div class="data-grid">
+      <!-- Montreal Region Map Card -->
+      <div class="data-card triple-wide">
+        <h3>Montreal Region Map</h3>
+        <div class="card-content">
+          <div class="map-controls">
+            <!-- Category toggle buttons -->
+            <div class="filter-buttons">
+              <button
+                class="filter-toggle"
+                data-filter="bornes_recharge_publiques"
+              >
+                <i class="fas fa-charging-station"></i> EV Charging Stations
+              </button>
+              <button class="filter-toggle" data-filter="inspections_salubrite">
+                <i class="fas fa-home"></i> Housing Inspections
+              </button>
+            </div>
+
+            <!-- Budget filter section -->
+            <div class="budget-selector">
+              <label for="budget-toggle">Option:</label>
+              <select id="budget-toggle">
+                <option value="renting">Renting</option>
+                <option value="buying">Buying</option>
+              </select>
+              <input type="number" id="budget-min" placeholder="Min Budget" />
+              <input type="number" id="budget-max" placeholder="Max Budget" />
+              <button id="searchFiltersButton">Search</button>
+            </div>
+
+            <!-- Toggle Switch for bicycle-->
+            <div class="toggle">
+              <input type="checkbox" id="btn" />
+              <label for="btn">
+                <span class="thumb"></span>
+              </label>
+              <div class="light"></div>
+            </div>
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+
+      <!-- Mission Log Card -->
+      <div class="data-card">
+        <div class="card-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3>Informations</h3>
+        <div class="card-content">
+          <div id="missionLog" class="scrollable-text-1">
+            Your regional summary information will appear here.
+          </div>
+        </div>
+      </div>
+
+      <!-- Property Advisor Chat Card -->
+      <div id="advisorChatCard" class="data-card" style="display: none">
+        <div class="card-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3>Property Advisor Chat</h3>
+        <div class="card-content">
+          <div id="advisorChatLog" class="scrollable-text-1">
+            <!-- The advisor plan will be automatically provided here. -->
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              id="advisorUserInput"
+              placeholder="Ask your advisor..."
+            />
+            <button id="advisorSendButton">
+              <i class="fas fa-paper-plane"></i>
             </button>
           </div>
-          
-          <!-- Budget filter section -->
-          <div class="budget-selector">
-            <label for="budget-toggle">Option:</label>
-            <select id="budget-toggle">
-              <option value="renting">Renting</option>
-              <option value="buying">Buying</option>
-            </select>
-            <input type="number" id="budget-min" placeholder="Min Budget">
-            <input type="number" id="budget-max" placeholder="Max Budget">
-            <button id="searchFiltersButton">Search</button>
-          </div>
-          
-          
-        </div>
-        <div id="map"></div>
-      </div>
-    </div>
-    <!-- Mission Log Card -->
-    <div class="data-card">
-      <div class="card-icon">
-        <i class="fas fa-file-alt"></i>
-      </div>
-      <h3>Informations</h3>
-      <div class="card-content">
-        <div id="missionLog" class="scrollable-text-1">
-          Your regional summary information will appear here.
         </div>
       </div>
     </div>
-    <!-- Property Advisor Chat Card (hidden by default) -->
-    <div id="advisorChatCard" class="data-card" style="display: none;">
-      <div class="card-icon">
-        <i class="fas fa-comments"></i>
-      </div>
-      <h3>Property Advisor Chat</h3>
-      <div class="card-content">
-        <div id="advisorChatLog" class="scrollable-text-1">
-          <!-- The advisor plan will be automatically provided here. -->
-        </div>
-        <div class="input-container">
-          <input type="text" id="advisorUserInput" placeholder="Ask your advisor...">
-          <button id="advisorSendButton"><i class="fas fa-paper-plane"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="/scripts.js"></script>
-</body>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/scripts.js"></script>
+  </body>
 </html>

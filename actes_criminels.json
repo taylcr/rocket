@@ -1,0 +1,4615 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2018-09-13",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 294904.159001211,
+        "Y": 5047548.9209945202,
+        "LONGITUDE": -73.626778,
+        "LATITUDE": 45.56778
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.626778046945191, 45.567779812980355]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2018-04-30",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 294904.159001211,
+        "Y": 5047548.9209945202,
+        "LONGITUDE": -73.626778,
+        "LATITUDE": 45.56778
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.626778046945191, 45.567779812980355]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2018-09-01",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 290274.565,
+        "Y": 5042150.474,
+        "LONGITUDE": -73.685928,
+        "LATITUDE": 45.519122
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.685928452217595, 45.519121646523985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-07-21",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-07-29",
+        "QUART": "jour",
+        "PDQ": 12.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-07-30",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-07-30",
+        "QUART": "jour",
+        "PDQ": 38.0,
+        "X": 297654.71500212298,
+        "Y": 5041877.0730075799,
+        "LONGITUDE": -73.591457,
+        "LATITUDE": 45.516776
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.591457265022825, 45.516776173612058]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-07-30",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-01",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 294259.78099299711,
+        "Y": 5051449.9999985602,
+        "LONGITUDE": -73.635117,
+        "LATITUDE": 45.602873
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.635117495566192, 45.602873334934472]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-01",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-08-01",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 285957.55599175597,
+        "Y": 5033790.6769939102,
+        "LONGITUDE": -73.740866,
+        "LATITUDE": 45.443794
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.740865838318769, 45.443793671112878]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-08-28",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 290274.565,
+        "Y": 5042150.474,
+        "LONGITUDE": -73.685928,
+        "LATITUDE": 45.519122
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.685928452217595, 45.519121646523985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-01-10",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2018-11-12",
+        "QUART": "soir",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2018-08-15",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-01-11",
+        "QUART": "soir",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-02",
+        "QUART": "soir",
+        "PDQ": 31.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-08-02",
+        "QUART": "soir",
+        "PDQ": 21.0,
+        "X": 300149.76399978198,
+        "Y": 5041903.0120064598,
+        "LONGITUDE": -73.559522,
+        "LATITUDE": 45.517031
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.559521738039464, 45.517030687683032]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-03",
+        "QUART": "jour",
+        "PDQ": 22.0,
+        "X": 300495.60299448197,
+        "Y": 5042438.0870004091,
+        "LONGITUDE": -73.5551,
+        "LATITUDE": 45.521848
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.555099795709552, 45.521847727360004]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-04",
+        "QUART": "jour",
+        "PDQ": 48.0,
+        "X": 302206.20400927402,
+        "Y": 5050672.0940036802,
+        "LONGITUDE": -73.533246,
+        "LATITUDE": 45.595949
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.533246377897314, 45.595948588214547]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-04",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-08-21",
+        "QUART": "nuit",
+        "PDQ": 48.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-21",
+        "QUART": "soir",
+        "PDQ": 31.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-08-22",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-22",
+        "QUART": "soir",
+        "PDQ": 39.0,
+        "X": 294834.48499070702,
+        "Y": 5050681.0729965204,
+        "LONGITUDE": -73.627735,
+        "LATITUDE": 45.595963
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.627734551106684, 45.595962809480582]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-23",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-08-23",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-23",
+        "QUART": "jour",
+        "PDQ": 12.0,
+        "X": 298266.06,
+        "Y": 5038914.047,
+        "LONGITUDE": -73.583593,
+        "LATITUDE": 45.49012
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.583592793462486, 45.490119617977157]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-01-10",
+        "QUART": "soir",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-01-10",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-01-08",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-09-14",
+        "QUART": "soir",
+        "PDQ": 30.0,
+        "X": 294670.696004792,
+        "Y": 5047694.5960033899,
+        "LONGITUDE": -73.629772,
+        "LATITUDE": 45.569087
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.629772009491361, 45.569087282489136]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2018-10-16",
+        "QUART": "jour",
+        "PDQ": 8.0,
+        "X": 292010.969,
+        "Y": 5032898.0,
+        "LONGITUDE": -73.663461,
+        "LATITUDE": 45.435898
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.663461331361248, 45.435897884824257]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-09-05",
+        "QUART": "jour",
+        "PDQ": 38.0,
+        "X": 297929.90699194401,
+        "Y": 5042565.5789986998,
+        "LONGITUDE": -73.587945,
+        "LATITUDE": 45.522974
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.587944554819757, 45.522974386897396]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-25",
+        "QUART": "jour",
+        "PDQ": 22.0,
+        "X": 300675.21600806498,
+        "Y": 5042710.0989945903,
+        "LONGITUDE": -73.552803,
+        "LATITUDE": 45.524296
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.552802893186268, 45.524296484528314]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-25",
+        "QUART": "soir",
+        "PDQ": 16.0,
+        "X": 301261.624,
+        "Y": 5036460.927,
+        "LONGITUDE": -73.545251,
+        "LATITUDE": 45.468067
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.545251008327057, 45.468066919222743]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-09",
+        "QUART": "soir",
+        "PDQ": 39.0,
+        "X": 294259.78099299711,
+        "Y": 5051449.9999985602,
+        "LONGITUDE": -73.635117,
+        "LATITUDE": 45.602873
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.635117495566192, 45.602873334934472]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-10",
+        "QUART": "soir",
+        "PDQ": 35.0,
+        "X": 297269.069,
+        "Y": 5044288.756,
+        "LONGITUDE": -73.59643,
+        "LATITUDE": 45.538473
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.596430471405043, 45.538473351609895]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-02-17",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": 300632.00000694598,
+        "Y": 5041019.9999949299,
+        "LONGITUDE": -73.553342,
+        "LATITUDE": 45.509088
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.553341746287529, 45.509088032593091]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-10-28",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": 300632.00000694598,
+        "Y": 5041019.9999949299,
+        "LONGITUDE": -73.553342,
+        "LATITUDE": 45.509088
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.553341746287529, 45.509088032593091]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-11",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 293808.43799102202,
+        "Y": 5049462.5000076499,
+        "LONGITUDE": -73.640859,
+        "LATITUDE": 45.584982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.640858600597085, 45.58498230505883]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-09-09",
+        "QUART": "jour",
+        "PDQ": 38.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-09-11",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 290109.1,
+        "Y": 5042399.839,
+        "LONGITUDE": -73.688054,
+        "LATITUDE": 45.521362
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.688053900522974, 45.521362054264181]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-13",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": 300166.67100075801,
+        "Y": 5041928.8820052799,
+        "LONGITUDE": -73.559306,
+        "LATITUDE": 45.517264
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.55930557774191, 45.517263588915696]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-09-12",
+        "QUART": "jour",
+        "PDQ": 31.0,
+        "X": 295933.86199710798,
+        "Y": 5045137.95800047,
+        "LONGITUDE": -73.613543,
+        "LATITUDE": 45.546099
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.613542596641082, 45.546099057259333]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-09-13",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 291073.469,
+        "Y": 5041533.5,
+        "LONGITUDE": -73.675685,
+        "LATITUDE": 45.513586
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.675685095583191, 45.513586074800749]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-09-14",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 299537.39099644899,
+        "Y": 5048547.4310040297,
+        "LONGITUDE": -73.567431,
+        "LATITUDE": 45.576815
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.567431386111281, 45.576815172849585]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-09-15",
+        "QUART": "nuit",
+        "PDQ": 27.0,
+        "X": 292211.629997582,
+        "Y": 5046759.2500032596,
+        "LONGITUDE": -73.661252,
+        "LATITUDE": 45.560631
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.661252243550194, 45.560630628748058]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-07-29",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 291448.766,
+        "Y": 5041195.963,
+        "LONGITUDE": -73.670873,
+        "LATITUDE": 45.510556
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.670872520986833, 45.510556076483482]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-07-30",
+        "QUART": "jour",
+        "PDQ": 38.0,
+        "X": 299198.426991791,
+        "Y": 5040863.0669925204,
+        "LONGITUDE": -73.571687,
+        "LATITUDE": 45.507666
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.571686699317524, 45.507665843781027]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-07-30",
+        "QUART": "soir",
+        "PDQ": 33.0,
+        "X": 295536.08499068598,
+        "Y": 5043174.6579978699,
+        "LONGITUDE": -73.6186,
+        "LATITUDE": 45.528427
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.618599501200023, 45.528427406555132]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-09-04",
+        "QUART": "jour",
+        "PDQ": 38.0,
+        "X": 297184.15700536,
+        "Y": 5042137.3820009204,
+        "LONGITUDE": -73.597484,
+        "LATITUDE": 45.519114
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.597484286539455, 45.519113555463178]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-09-05",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 286683.843467,
+        "Y": 5042287.0466160001,
+        "LONGITUDE": -73.731895,
+        "LATITUDE": 45.520267
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.731895107474287, 45.520266516637093]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2018-12-31",
+        "QUART": "nuit",
+        "PDQ": 9.0,
+        "X": 291612.37499176693,
+        "Y": 5035291.0000071405,
+        "LONGITUDE": -73.66862,
+        "LATITUDE": 45.457424
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.66862002998279, 45.457423844486655]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-07-08",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 281251.56299261103,
+        "Y": 5035832.5000014892,
+        "LONGITUDE": -73.80112,
+        "LATITUDE": 45.462024
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.801120273204731, 45.46202408883633]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-08-17",
+        "QUART": "soir",
+        "PDQ": 4.0,
+        "X": 280815.90248522902,
+        "Y": 5039045.9510369804,
+        "LONGITUDE": -73.806848,
+        "LATITUDE": 45.490925
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.806848000127246, 45.490925002376336]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-01-08",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 294163.348,
+        "Y": 5045419.469,
+        "LONGITUDE": -73.636222,
+        "LATITUDE": 45.548607
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.636222423937156, 45.548607400914051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-11-12",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": 294163.348,
+        "Y": 5045419.469,
+        "LONGITUDE": -73.636222,
+        "LATITUDE": 45.548607
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.636222423937156, 45.548607400914051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-12-22",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": 294163.348,
+        "Y": 5045419.469,
+        "LONGITUDE": -73.636222,
+        "LATITUDE": 45.548607
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.636222423937156, 45.548607400914051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2018-10-24",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 294163.348,
+        "Y": 5045419.469,
+        "LONGITUDE": -73.636222,
+        "LATITUDE": 45.548607
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.636222423937156, 45.548607400914051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-08-01",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 282756.530993636,
+        "Y": 5038387.4999909997,
+        "LONGITUDE": -73.781991,
+        "LATITUDE": 45.485064
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.781990717125169, 45.485064028150667]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-03",
+        "QUART": "jour",
+        "PDQ": 45.0,
+        "X": 296483.624,
+        "Y": 5055233.772,
+        "LONGITUDE": -73.606674,
+        "LATITUDE": 45.636951
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.606674140310886, 45.636950745400284]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-03",
+        "QUART": "soir",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-04",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 280103.0,
+        "Y": 5036564.0,
+        "LONGITUDE": -73.815844,
+        "LATITUDE": 45.468567
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.815843797004334, 45.468566723178938]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-21",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 284797.844,
+        "Y": 5039000.0,
+        "LONGITUDE": -73.755902,
+        "LATITUDE": 45.490637
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.755902484725567, 45.490637005914621]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-21",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 284797.844,
+        "Y": 5039000.0,
+        "LONGITUDE": -73.755902,
+        "LATITUDE": 45.490637
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.755902484725567, 45.490637005914621]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-23",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 285593.476,
+        "Y": 5039039.189,
+        "LONGITUDE": -73.745725,
+        "LATITUDE": 45.491012
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.745725001367049, 45.491011992947207]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-23",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 295136.089,
+        "Y": 5054000.09,
+        "LONGITUDE": -73.623934,
+        "LATITUDE": 45.625832
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.623934462462159, 45.625832373312583]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-23",
+        "QUART": "jour",
+        "PDQ": 16.0,
+        "X": 298044.53100331698,
+        "Y": 5033271.9999938095,
+        "LONGITUDE": -73.586349,
+        "LATITUDE": 45.439348
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.586349406071108, 45.439347658114961]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-08-24",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 292364.47999982111,
+        "Y": 5048228.0330022704,
+        "LONGITUDE": -73.659332,
+        "LATITUDE": 45.57385
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.659331661397658, 45.573849916766754]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-24",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 295293.737,
+        "Y": 5054154.659,
+        "LONGITUDE": -73.621916,
+        "LATITUDE": 45.627225
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.621915731234807, 45.627225393708265]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-25",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 292147.72199788498,
+        "Y": 5047324.8169916403,
+        "LONGITUDE": -73.662086,
+        "LATITUDE": 45.565719
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.662085511161507, 45.565718611151766]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-25",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 283286.536,
+        "Y": 5038196.645,
+        "LONGITUDE": -73.775202,
+        "LATITUDE": 45.483363
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.775202354438534, 45.483363183227361]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-25",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-25",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 279054.587,
+        "Y": 5035900.977,
+        "LONGITUDE": -73.829217,
+        "LATITUDE": 45.462563
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.829216742586311, 45.462562756472224]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-25",
+        "QUART": "soir",
+        "PDQ": 23.0,
+        "X": 301167.08699664503,
+        "Y": 5044717.6099934597,
+        "LONGITUDE": -73.546521,
+        "LATITUDE": 45.542364
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5465211633461, 45.542363567083228]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-25",
+        "QUART": "soir",
+        "PDQ": 39.0,
+        "X": 294215.524255,
+        "Y": 5052767.6621749997,
+        "LONGITUDE": -73.635713,
+        "LATITUDE": 45.614729
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.635713421454668, 45.614729299921272]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2018-09-14",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": 294163.348,
+        "Y": 5045419.469,
+        "LONGITUDE": -73.636222,
+        "LATITUDE": 45.548607
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.636222423937156, 45.548607400914051]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-06-18",
+        "QUART": "jour",
+        "PDQ": 24.0,
+        "X": 295435.804,
+        "Y": 5041998.158,
+        "LONGITUDE": -73.619861,
+        "LATITUDE": 45.517839
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.619860843878016, 45.517839473867596]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-11-08",
+        "QUART": "soir",
+        "PDQ": 24.0,
+        "X": 295435.804,
+        "Y": 5041998.158,
+        "LONGITUDE": -73.619861,
+        "LATITUDE": 45.517839
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.619860843878016, 45.517839473867596]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-05-15",
+        "QUART": "jour",
+        "PDQ": 49.0,
+        "X": 305817.012,
+        "Y": 5061470.687,
+        "LONGITUDE": -73.486942,
+        "LATITUDE": 45.693121
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.486941736181876, 45.693120648277997]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-02-02",
+        "QUART": "soir",
+        "PDQ": 42.0,
+        "X": 298486.79999355099,
+        "Y": 5048362.9369970495,
+        "LONGITUDE": -73.580891,
+        "LATITUDE": 45.575146
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580890527490936, 45.575146300219735]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-07-18",
+        "QUART": "soir",
+        "PDQ": 42.0,
+        "X": 298486.79999355099,
+        "Y": 5048362.9369970495,
+        "LONGITUDE": -73.580891,
+        "LATITUDE": 45.575146
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580890527490936, 45.575146300219735]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-01-11",
+        "QUART": "soir",
+        "PDQ": 5.0,
+        "X": 281017.468999025,
+        "Y": 5033190.9999911496,
+        "LONGITUDE": -73.803986,
+        "LATITUDE": 45.438247
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.803985943806637, 45.438246919043259]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2018-02-03",
+        "QUART": "nuit",
+        "PDQ": 46.0,
+        "X": 300206.96900415001,
+        "Y": 5052306.4999971399,
+        "LONGITUDE": -73.558887,
+        "LATITUDE": 45.610645
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.558887252786249, 45.610645077845604]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-26",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 282404.78100616205,
+        "Y": 5037605.0000002803,
+        "LONGITUDE": -73.786455,
+        "LATITUDE": 45.478012
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.786454732777642, 45.478011621264045]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-08-26",
+        "QUART": "soir",
+        "PDQ": 5.0,
+        "X": 279357.87500950601,
+        "Y": 5035896.5000063097,
+        "LONGITUDE": -73.825338,
+        "LATITUDE": 45.462534
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.825338310872638, 45.462533582594567]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-09-09",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 287244.719005969,
+        "Y": 5038838.4999962999,
+        "LONGITUDE": -73.724592,
+        "LATITUDE": 45.48925
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.724592272946026, 45.489249607572567]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-09",
+        "QUART": "nuit",
+        "PDQ": 38.0,
+        "X": 297681.81199896499,
+        "Y": 5042182.0750074396,
+        "LONGITUDE": -73.591115,
+        "LATITUDE": 45.519521
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.591114862342977, 45.519520979227067]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-09-09",
+        "QUART": "soir",
+        "PDQ": 1.0,
+        "X": 276530.59400748101,
+        "Y": 5034618.99999322,
+        "LONGITUDE": -73.861418,
+        "LATITUDE": 45.45093
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.86141771851689, 45.450929531889841]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-09-10",
+        "QUART": "jour",
+        "PDQ": 23.0,
+        "X": 301474.08699752798,
+        "Y": 5044587.27399344,
+        "LONGITUDE": -73.542589,
+        "LATITUDE": 45.541192
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.542588999279616, 45.54119228932921]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-11",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 282109.68799207697,
+        "Y": 5037403.0000011101,
+        "LONGITUDE": -73.79022,
+        "LATITUDE": 45.476184
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.790219855021519, 45.47618442569933]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-09-08",
+        "QUART": "soir",
+        "PDQ": 5.0,
+        "X": 280570.40600696002,
+        "Y": 5036988.5000014203,
+        "LONGITUDE": -73.809887,
+        "LATITUDE": 45.472403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.809887278371221, 45.472402894296295]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-11",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 281902.87500761001,
+        "Y": 5037668.50000678,
+        "LONGITUDE": -73.792877,
+        "LATITUDE": 45.478567
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.792877432739189, 45.478566737188551]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-09-12",
+        "QUART": "jour",
+        "PDQ": 48.0,
+        "X": 302411.88200858003,
+        "Y": 5051990.6110051395,
+        "LONGITUDE": -73.530617,
+        "LATITUDE": 45.607814
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.530616521479516, 45.607813700422795]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-16",
+        "QUART": "nuit",
+        "PDQ": 5.0,
+        "X": 282109.68799207697,
+        "Y": 5037403.0000011101,
+        "LONGITUDE": -73.79022,
+        "LATITUDE": 45.476184
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.790219855021519, 45.47618442569933]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-16",
+        "QUART": "jour",
+        "PDQ": 3.0,
+        "X": 277733.68800273503,
+        "Y": 5038853.5000008699,
+        "LONGITUDE": -73.84627,
+        "LATITUDE": 45.489081
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.846269973055456, 45.489080540555818]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-08-17",
+        "QUART": "nuit",
+        "PDQ": 33.0,
+        "X": 294589.97200343898,
+        "Y": 5043059.5210079104,
+        "LONGITUDE": -73.63071,
+        "LATITUDE": 45.527378
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.630709502012522, 45.527378144068564]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-09-25",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 300206.96900415001,
+        "Y": 5052306.4999971399,
+        "LONGITUDE": -73.558887,
+        "LATITUDE": 45.610645
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.558887252786249, 45.610645077845604]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2018-04-21",
+        "QUART": "soir",
+        "PDQ": 24.0,
+        "X": 295946.812991168,
+        "Y": 5041673.4999977201,
+        "LONGITUDE": -73.613314,
+        "LATITUDE": 45.514925
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.61331412572892, 45.514924749940697]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2018-07-05",
+        "QUART": "jour",
+        "PDQ": 24.0,
+        "X": 295946.812991168,
+        "Y": 5041673.4999977201,
+        "LONGITUDE": -73.613314,
+        "LATITUDE": 45.514925
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.61331412572892, 45.514924749940697]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-09-06",
+        "QUART": "jour",
+        "PDQ": 35.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2018-10-24",
+        "QUART": "soir",
+        "PDQ": 42.0,
+        "X": 296487.90600023803,
+        "Y": 5048991.9999945797,
+        "LONGITUDE": -73.606513,
+        "LATITUDE": 45.580786
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.606512858824388, 45.580785788966658]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-09-09",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 292087.55098979297,
+        "Y": 5045786.5490055298,
+        "LONGITUDE": -73.662816,
+        "LATITUDE": 45.551876
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.662816363638839, 45.551875709338745]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-09-09",
+        "QUART": "soir",
+        "PDQ": 31.0,
+        "X": 295270.495,
+        "Y": 5045555.567,
+        "LONGITUDE": -73.622046,
+        "LATITUDE": 45.549848
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.622045999594548, 45.549848084802576]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-10-12",
+        "QUART": "jour",
+        "PDQ": 22.0,
+        "X": 300675.21600806498,
+        "Y": 5042710.0989945903,
+        "LONGITUDE": -73.552803,
+        "LATITUDE": 45.524296
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.552802893186268, 45.524296484528314]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-10-18",
+        "QUART": "soir",
+        "PDQ": 48.0,
+        "X": 303812.31599766901,
+        "Y": 5049967.1099984404,
+        "LONGITUDE": -73.512658,
+        "LATITUDE": 45.589609
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.512658365908436, 45.589609075334536]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-11-15",
+        "QUART": "soir",
+        "PDQ": 21.0,
+        "X": 300117.94000814302,
+        "Y": 5041852.2659911001,
+        "LONGITUDE": -73.559929,
+        "LATITUDE": 45.516574
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.559928591421198, 45.516573841584382]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-08-20",
+        "QUART": "jour",
+        "PDQ": 48.0,
+        "X": 303311.61499034602,
+        "Y": 5050186.6050062496,
+        "LONGITUDE": -73.519076,
+        "LATITUDE": 45.591583
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.519076124093871, 45.591583264054194]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-08-20",
+        "QUART": "nuit",
+        "PDQ": 31.0,
+        "X": 295610.65400626801,
+        "Y": 5045341.8840053296,
+        "LONGITUDE": -73.617686,
+        "LATITUDE": 45.54793
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.617685521850973, 45.547929864119688]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-09-16",
+        "QUART": "soir",
+        "PDQ": 22.0,
+        "X": 300446.50399873097,
+        "Y": 5042365.08700753,
+        "LONGITUDE": -73.555728,
+        "LATITUDE": 45.521191
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.555727654139787, 45.521190539572856]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-09-16",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 301799.197,
+        "Y": 5051374.59,
+        "LONGITUDE": -73.538468,
+        "LATITUDE": 45.602268
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.538467570754435, 45.602268203893992]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-10-30",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": 292579.73599886103,
+        "Y": 5046971.5679961899,
+        "LONGITUDE": -73.656542,
+        "LATITUDE": 45.562548
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.656542268905, 45.562547689239331]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-10-31",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": 300166.67100075801,
+        "Y": 5041928.8820052799,
+        "LONGITUDE": -73.559306,
+        "LATITUDE": 45.517264
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.55930557774191, 45.517263588915696]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-10-31",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 293493.65600593598,
+        "Y": 5049888.5000053402,
+        "LONGITUDE": -73.644902,
+        "LATITUDE": 45.588811
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.64490243077347, 45.588810522322667]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-10-31",
+        "QUART": "soir",
+        "PDQ": 39.0,
+        "X": 295680.71900537494,
+        "Y": 5053389.5000041798,
+        "LONGITUDE": -73.616938,
+        "LATITUDE": 45.620346
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.616938467586706, 45.620345512883219]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-11-02",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": 300026.312,
+        "Y": 5041712.579,
+        "LONGITUDE": -73.5611,
+        "LATITUDE": 45.515316
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.561100034201232, 45.515316260206838]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-12-10",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-12-11",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": 300642.81600872503,
+        "Y": 5040605.8799998304,
+        "LONGITUDE": -73.5532,
+        "LATITUDE": 45.505362
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.553199813642664, 45.505361671602365]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-03-31",
+        "QUART": "jour",
+        "PDQ": 48.0,
+        "X": 302798.90699979803,
+        "Y": 5051108.09600309,
+        "LONGITUDE": -73.525651,
+        "LATITUDE": 45.599874
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.525651104818579, 45.599873814280009]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-04-01",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-04-01",
+        "QUART": "jour",
+        "PDQ": 11.0,
+        "X": 294581.14500515402,
+        "Y": 5036889.0029948093,
+        "LONGITUDE": -73.630694,
+        "LATITUDE": 45.471853
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.630693984717396, 45.471853150087448]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-04-02",
+        "QUART": "jour",
+        "PDQ": 10.0,
+        "X": 289187.44399046601,
+        "Y": 5043658.92600777,
+        "LONGITUDE": -73.699892,
+        "LATITUDE": 45.532672
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.699891802523908, 45.532671712864378]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-05-10",
+        "QUART": "soir",
+        "PDQ": 8.0,
+        "X": 288320.03099804401,
+        "Y": 5034213.0000016196,
+        "LONGITUDE": -73.71068,
+        "LATITUDE": 45.447654
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.710680325376487, 45.447653617097544]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2016-05-10",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-11",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 299141.420009483,
+        "Y": 5051031.6260020696,
+        "LONGITUDE": -73.572534,
+        "LATITUDE": 45.599166
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.572533861732225, 45.599165568946027]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-11",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 300159.55700897198,
+        "Y": 5050702.4499966605,
+        "LONGITUDE": -73.55948,
+        "LATITUDE": 45.596211
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.55947986716582, 45.59621109338692]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-05-12",
+        "QUART": "nuit",
+        "PDQ": 42.0,
+        "X": 296869.78100405697,
+        "Y": 5049622.9999996796,
+        "LONGITUDE": -73.60163,
+        "LATITUDE": 45.586468
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.601629687308247, 45.586468166814974]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-12",
+        "QUART": "jour",
+        "PDQ": 23.0,
+        "X": 301808.92700641102,
+        "Y": 5045698.8229913097,
+        "LONGITUDE": -73.538308,
+        "LATITUDE": 45.551196
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.538308098309756, 45.551195925411719]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-05-10",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": 298191.362,
+        "Y": 5038819.818,
+        "LONGITUDE": -73.584547,
+        "LATITUDE": 45.489271
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5845471822104, 45.489271000484976]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-05-13",
+        "QUART": "jour",
+        "PDQ": 21.0,
+        "X": 300404.04000588093,
+        "Y": 5040145.0639977604,
+        "LONGITUDE": -73.556251,
+        "LATITUDE": 45.501214
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.556251318002438, 45.501213589186435]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2016-05-13",
+        "QUART": "jour",
+        "PDQ": 12.0,
+        "X": 298191.362,
+        "Y": 5038819.818,
+        "LONGITUDE": -73.584547,
+        "LATITUDE": 45.489271
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5845471822104, 45.489271000484976]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2016-05-13",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-05-15",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289632.25,
+        "Y": 5037753.0,
+        "LONGITUDE": -73.694014,
+        "LATITUDE": 45.479538
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.694014219056896, 45.479537807080263]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-16",
+        "QUART": "jour",
+        "PDQ": 42.0,
+        "X": 296723.06300212094,
+        "Y": 5049752.0000059605,
+        "LONGITUDE": -73.603512,
+        "LATITUDE": 45.587627
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.603512081615548, 45.58762725712544]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-05-16",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": 298095.461,
+        "Y": 5038908.547,
+        "LONGITUDE": -73.585775,
+        "LATITUDE": 45.490069
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.585775295941588, 45.490068508504656]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-05-17",
+        "QUART": "jour",
+        "PDQ": 42.0,
+        "X": 296869.78100405697,
+        "Y": 5049622.9999996796,
+        "LONGITUDE": -73.60163,
+        "LATITUDE": 45.586468
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.601629687308247, 45.586468166814974]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-05-17",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 288356.54199019494,
+        "Y": 5039184.6960046198,
+        "LONGITUDE": -73.71038,
+        "LATITUDE": 45.492392
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.710379939783977, 45.492391894681461]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-17",
+        "QUART": "jour",
+        "PDQ": 23.0,
+        "X": 301921.988005928,
+        "Y": 5045647.1170077901,
+        "LONGITUDE": -73.53686,
+        "LATITUDE": 45.550731
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.536859768349046, 45.550731133151231]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-18",
+        "QUART": "nuit",
+        "PDQ": 45.0,
+        "X": 299520.702,
+        "Y": 5056811.618,
+        "LONGITUDE": -73.567735,
+        "LATITUDE": 45.651178
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.567734689153326, 45.651178254035202]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-05-19",
+        "QUART": "soir",
+        "PDQ": 15.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-06-15",
+        "QUART": "jour",
+        "PDQ": 12.0,
+        "X": 298490.123,
+        "Y": 5038404.134,
+        "LONGITUDE": -73.58072,
+        "LATITUDE": 45.485533
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580719663985221, 45.48553325547072]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-16",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-16",
+        "QUART": "soir",
+        "PDQ": 20.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-17",
+        "QUART": "nuit",
+        "PDQ": 48.0,
+        "X": 302476.60398948001,
+        "Y": 5051243.5940071698,
+        "LONGITUDE": -73.529783,
+        "LATITUDE": 45.601092
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.529783205678399, 45.60109206019289]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-06-17",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289413.516,
+        "Y": 5042229.119,
+        "LONGITUDE": -73.696952,
+        "LATITUDE": 45.519811
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69695245559771, 45.519810851061017]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-18",
+        "QUART": "jour",
+        "PDQ": 31.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-19",
+        "QUART": "jour",
+        "PDQ": 8.0,
+        "X": 288793.59400742,
+        "Y": 5034191.9999989001,
+        "LONGITUDE": -73.704626,
+        "LATITUDE": 45.447476
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.704625640507842, 45.447475655056508]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-06-20",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-06-26",
+        "QUART": "nuit",
+        "PDQ": 44.0,
+        "X": 298477.15299456898,
+        "Y": 5045850.8639938897,
+        "LONGITUDE": -73.580982,
+        "LATITUDE": 45.552542
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580981650207832, 45.552541763187349]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-06-26",
+        "QUART": "nuit",
+        "PDQ": 39.0,
+        "X": 294501.18800724798,
+        "Y": 5052060.0000009295,
+        "LONGITUDE": -73.632036,
+        "LATITUDE": 45.608366
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.632035728014259, 45.6083658820992]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2016-06-16",
+        "QUART": "soir",
+        "PDQ": 8.0,
+        "X": 291275.43799267302,
+        "Y": 5033369.9999943096,
+        "LONGITUDE": -73.672875,
+        "LATITUDE": 45.440131
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.672875352170593, 45.440131332900442]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-02-11",
+        "QUART": "soir",
+        "PDQ": 45.0,
+        "X": 296586.64799544099,
+        "Y": 5054326.14099776,
+        "LONGITUDE": -73.605337,
+        "LATITUDE": 45.628785
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.605337352845396, 45.628784917669641]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2016-05-11",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": 300305.97500020405,
+        "Y": 5040211.8699928494,
+        "LONGITUDE": -73.557507,
+        "LATITUDE": 45.501814
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.557506782870533, 45.50181411330599]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2016-05-16",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 300968.96399736399,
+        "Y": 5052666.2389957104,
+        "LONGITUDE": -73.549121,
+        "LATITUDE": 45.613887
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.549120544264909, 45.613886718909477]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-21",
+        "QUART": "nuit",
+        "PDQ": 20.0,
+        "X": 299817.35400263098,
+        "Y": 5039377.0560002597,
+        "LONGITUDE": -73.563751,
+        "LATITUDE": 45.494299
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.563750830732715, 45.494298777084857]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2016-06-26",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 293417.06300524902,
+        "Y": 5045272.7499962198,
+        "LONGITUDE": -73.645777,
+        "LATITUDE": 45.547275
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.645776570390353, 45.547275377894564]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-12-12",
+        "QUART": "soir",
+        "PDQ": 45.0,
+        "X": 297681.10199862206,
+        "Y": 5055920.0990012204,
+        "LONGITUDE": -73.591324,
+        "LATITUDE": 45.64314
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.591324145786245, 45.643139764192803]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-12-13",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-12-14",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 293090.80900068802,
+        "Y": 5046844.1529926499,
+        "LONGITUDE": -73.649992,
+        "LATITUDE": 45.56141
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.64999236726608, 45.561409953851914]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2015-12-14",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": 292373.91299616598,
+        "Y": 5045342.9640039001,
+        "LONGITUDE": -73.659137,
+        "LATITUDE": 45.547889
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.659137494569038, 45.547889357407975]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-12-14",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": 292660.30899875303,
+        "Y": 5045747.0429956494,
+        "LONGITUDE": -73.65548,
+        "LATITUDE": 45.55153
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.655479737730616, 45.551530441403358]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-08",
+        "QUART": "soir",
+        "PDQ": 30.0,
+        "X": 295506.26000646799,
+        "Y": 5047473.5540043097,
+        "LONGITUDE": -73.619063,
+        "LATITUDE": 45.56711
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.619062967820994, 45.567109937585776]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-02-21",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298015.27900634101,
+        "Y": 5046049.5119983098,
+        "LONGITUDE": -73.5869,
+        "LATITUDE": 45.554325
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.586899980071053, 45.554324918773531]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-02-21",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298015.27900634101,
+        "Y": 5046049.5119983098,
+        "LONGITUDE": -73.5869,
+        "LATITUDE": 45.554325
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.586899980071053, 45.554324918773531]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-04-02",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 296646.591997932,
+        "Y": 5046740.0239970703,
+        "LONGITUDE": -73.604442,
+        "LATITUDE": 45.560524
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.604441863440329, 45.560523692478291]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-04-13",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": 295969.41499006411,
+        "Y": 5047181.9150040997,
+        "LONGITUDE": -73.613124,
+        "LATITUDE": 45.564492
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.613124190794167, 45.564491708567445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-04-25",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298625.89399621403,
+        "Y": 5045784.9849980297,
+        "LONGITUDE": -73.579076,
+        "LATITUDE": 45.55195
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.579075778308678, 45.551950295934724]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-12-16",
+        "QUART": "jour",
+        "PDQ": 27.0,
+        "X": 292660.30899875303,
+        "Y": 5045747.0429956494,
+        "LONGITUDE": -73.65548,
+        "LATITUDE": 45.55153
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.655479737730616, 45.551530441403358]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-09",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299141.420009483,
+        "Y": 5051031.6260020696,
+        "LONGITUDE": -73.572534,
+        "LATITUDE": 45.599166
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.572533861732225, 45.599165568946027]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-09",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 294349.624998449,
+        "Y": 5052266.5000032997,
+        "LONGITUDE": -73.633983,
+        "LATITUDE": 45.610222
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.633983257350636, 45.61022175585753]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-02-10",
+        "QUART": "jour",
+        "PDQ": 15.0,
+        "X": 298188.31699774403,
+        "Y": 5034752.1499965396,
+        "LONGITUDE": -73.584531,
+        "LATITUDE": 45.452668
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.584531404650733, 45.452668178312472]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-02-10",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-10",
+        "QUART": "jour",
+        "PDQ": 8.0,
+        "X": 290844.62,
+        "Y": 5034267.939,
+        "LONGITUDE": -73.678408,
+        "LATITUDE": 45.448203
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.678407648181448, 45.448202951767946]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-02-10",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-12",
+        "QUART": "nuit",
+        "PDQ": 21.0,
+        "X": 300888.75700838899,
+        "Y": 5041237.5010054894,
+        "LONGITUDE": -73.550058,
+        "LATITUDE": 45.511047
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.550057525913957, 45.511046684255383]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-02-13",
+        "QUART": "soir",
+        "PDQ": 27.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-02-12",
+        "QUART": "soir",
+        "PDQ": 3.0,
+        "X": 271614.927007825,
+        "Y": 5037778.0110071497,
+        "LONGITUDE": -73.924475,
+        "LATITUDE": 45.479139
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.924475040731124, 45.479138950224822]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-02-15",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299141.420009483,
+        "Y": 5051031.6260020696,
+        "LONGITUDE": -73.572534,
+        "LATITUDE": 45.599166
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.572533861732225, 45.599165568946027]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-02-15",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": 298191.362,
+        "Y": 5038819.818,
+        "LONGITUDE": -73.584547,
+        "LATITUDE": 45.489271
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5845471822104, 45.489271000484976]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-02-18",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": 298245.098002691,
+        "Y": 5038753.6599926203,
+        "LONGITUDE": -73.583859,
+        "LATITUDE": 45.488676
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.583858831488655, 45.488676188195676]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-02-20",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 289941.883,
+        "Y": 5042653.716,
+        "LONGITUDE": -73.690202,
+        "LATITUDE": 45.523643
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202082126405, 45.523642984509088]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-21",
+        "QUART": "soir",
+        "PDQ": 42.0,
+        "X": 296661.90599669103,
+        "Y": 5049790.5000048401,
+        "LONGITUDE": -73.604296,
+        "LATITUDE": 45.587973
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.604296495355896, 45.587972978073921]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-02-21",
+        "QUART": "soir",
+        "PDQ": 21.0,
+        "X": 300740.72799930302,
+        "Y": 5040849.0720087802,
+        "LONGITUDE": -73.551949,
+        "LATITUDE": 45.507551
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.551948839462412, 45.507550592389343]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-21",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-24",
+        "QUART": "nuit",
+        "PDQ": 15.0,
+        "X": 298100.948996383,
+        "Y": 5034904.9499998,
+        "LONGITUDE": -73.58565,
+        "LATITUDE": 45.454042
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.585650498291244, 45.454042316874485]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-02-26",
+        "QUART": "nuit",
+        "PDQ": 12.0,
+        "X": 298191.362,
+        "Y": 5038819.818,
+        "LONGITUDE": -73.584547,
+        "LATITUDE": 45.489271
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5845471822104, 45.489271000484976]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-02-26",
+        "QUART": "jour",
+        "PDQ": 4.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-02-26",
+        "QUART": "soir",
+        "PDQ": 15.0,
+        "X": 298539.50800775801,
+        "Y": 5038325.4159985101,
+        "LONGITUDE": -73.580087,
+        "LATITUDE": 45.484825
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580086898797575, 45.484825360176288]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-02-28",
+        "QUART": "nuit",
+        "PDQ": 11.0,
+        "X": 295165.98400926293,
+        "Y": 5036516.4350090204,
+        "LONGITUDE": -73.623207,
+        "LATITUDE": 45.468509
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.623206903210303, 45.468508924518211]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-03-02",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-03-02",
+        "QUART": "nuit",
+        "PDQ": 46.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2017-03-06",
+        "QUART": "jour",
+        "PDQ": 31.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-03-06",
+        "QUART": "jour",
+        "PDQ": 23.0,
+        "X": 301808.92700641102,
+        "Y": 5045698.8229913097,
+        "LONGITUDE": -73.538308,
+        "LATITUDE": 45.551196
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.538308098309756, 45.551195925411719]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-04-03",
+        "QUART": "soir",
+        "PDQ": 8.0,
+        "X": 288160.87500857201,
+        "Y": 5034219.4999981001,
+        "LONGITUDE": -73.712715,
+        "LATITUDE": 45.447708
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.71271518522245, 45.447708336187752]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2017-04-06",
+        "QUART": "nuit",
+        "PDQ": 26.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-04-06",
+        "QUART": "jour",
+        "PDQ": 15.0,
+        "X": 298188.31699774403,
+        "Y": 5034752.1499965396,
+        "LONGITUDE": -73.584531,
+        "LATITUDE": 45.452668
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.584531404650733, 45.452668178312472]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-04-06",
+        "QUART": "jour",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-04-06",
+        "QUART": "soir",
+        "PDQ": 12.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-04-08",
+        "QUART": "nuit",
+        "PDQ": 22.0,
+        "X": 301053.605,
+        "Y": 5041557.162,
+        "LONGITUDE": -73.54795,
+        "LATITUDE": 45.513924
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.547950184034562, 45.513924030682034]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-04-07",
+        "QUART": "nuit",
+        "PDQ": 12.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-04-08",
+        "QUART": "soir",
+        "PDQ": 48.0,
+        "X": 303121.86099371401,
+        "Y": 5050970.6350086899,
+        "LONGITUDE": -73.521511,
+        "LATITUDE": 45.598638
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.521510831525177, 45.598637756652359]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2017-04-09",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 299675.19200759998,
+        "Y": 5050910.8729975503,
+        "LONGITUDE": -73.565691,
+        "LATITUDE": 45.598083
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.56569050316439, 45.598083139767255]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-04-11",
+        "QUART": "jour",
+        "PDQ": 12.0,
+        "X": 298191.362,
+        "Y": 5038819.818,
+        "LONGITUDE": -73.584547,
+        "LATITUDE": 45.489271
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.5845471822104, 45.489271000484976]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2017-04-11",
+        "QUART": "soir",
+        "PDQ": 46.0,
+        "X": 298281.65599401999,
+        "Y": 5053189.4999982892,
+        "LONGITUDE": -73.583583,
+        "LATITUDE": 45.618575
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.583583471829698, 45.618575136648268]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2017-04-12",
+        "QUART": "jour",
+        "PDQ": 11.0,
+        "X": 295562.180009612,
+        "Y": 5036263.4329993203,
+        "LONGITUDE": -73.618135,
+        "LATITUDE": 45.466238
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.618135311947356, 45.466237646883968]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-14",
+        "QUART": "soir",
+        "PDQ": 44.0,
+        "X": 298158.385997604,
+        "Y": 5045330.0939980401,
+        "LONGITUDE": -73.585057,
+        "LATITUDE": 45.547853
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.585057275748326, 45.547852727536075]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-03-20",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-01-04",
+        "QUART": "nuit",
+        "PDQ": 22.0,
+        "X": 300910.19199670502,
+        "Y": 5043374.5980068892,
+        "LONGITUDE": -73.5498,
+        "LATITUDE": 45.530277
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.549800155378236, 45.530277255612418]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-01-06",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289959.03099319502,
+        "Y": 5038612.5000045002,
+        "LONGITUDE": -73.68986,
+        "LATITUDE": 45.487279
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.689860287606635, 45.487278965076428]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-01-15",
+        "QUART": "soir",
+        "PDQ": 5.0,
+        "X": 286009.859,
+        "Y": 5034484.319,
+        "LONGITUDE": -73.740224,
+        "LATITUDE": 45.450037
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.740223738711308, 45.450036774874036]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-01-16",
+        "QUART": "nuit",
+        "PDQ": 26.0,
+        "X": 294021.50100927899,
+        "Y": 5038487.5430020895,
+        "LONGITUDE": -73.637887,
+        "LATITUDE": 45.486229
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.637886608107578, 45.486229106333326]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-01-29",
+        "QUART": "soir",
+        "PDQ": 8.0,
+        "X": 287386.553,
+        "Y": 5035839.13,
+        "LONGITUDE": -73.722671,
+        "LATITUDE": 45.462264
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.722671422373523, 45.462263613844989]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-01-29",
+        "QUART": "soir",
+        "PDQ": 8.0,
+        "X": 287386.553,
+        "Y": 5035839.13,
+        "LONGITUDE": -73.722671,
+        "LATITUDE": 45.462264
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.722671422373523, 45.462263613844989]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-02-01",
+        "QUART": "jour",
+        "PDQ": 26.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-01",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-01",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 289566.881,
+        "Y": 5038191.736,
+        "LONGITUDE": -73.694864,
+        "LATITUDE": 45.483484
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.694863973343757, 45.483484311227024]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-03",
+        "QUART": "soir",
+        "PDQ": 5.0,
+        "X": 285800.406,
+        "Y": 5033530.5,
+        "LONGITUDE": -73.742865,
+        "LATITUDE": 45.441448
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.742864647303222, 45.441448229069323]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-06",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 292350.41,
+        "Y": 5041569.168,
+        "LONGITUDE": -73.659343,
+        "LATITUDE": 45.513931
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.659342572448679, 45.513930995558731]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-08",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298996.08599837899,
+        "Y": 5046690.6589914402,
+        "LONGITUDE": -73.574345,
+        "LATITUDE": 45.560103
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.574345239088046, 45.560103041019083]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-10",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 292502.05835900002,
+        "Y": 5041894.1858879998,
+        "LONGITUDE": -73.65741,
+        "LATITUDE": 45.516858
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.657409782831905, 45.516858319894851]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-12",
+        "QUART": "jour",
+        "PDQ": 42.0,
+        "X": 297349.93799380498,
+        "Y": 5049079.99999204,
+        "LONGITUDE": -73.595468,
+        "LATITUDE": 45.581587
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.595467964330396, 45.581587404035091]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-02-14",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298371.08300494298,
+        "Y": 5045678.0949914893,
+        "LONGITUDE": -73.582338,
+        "LATITUDE": 45.550986
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.582337900084383, 45.550986157158505]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-17",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-17",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-17",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-17",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-01-06",
+        "QUART": "nuit",
+        "PDQ": 44.0,
+        "X": 298477.15299456898,
+        "Y": 5045850.8639938897,
+        "LONGITUDE": -73.580982,
+        "LATITUDE": 45.552542
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580981650207832, 45.552541763187349]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-01-14",
+        "QUART": "nuit",
+        "PDQ": 22.0,
+        "X": 301048.19100849493,
+        "Y": 5043286.0970026096,
+        "LONGITUDE": -73.548033,
+        "LATITUDE": 45.529482
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.548032714304355, 45.529481646095618]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-01-17",
+        "QUART": "nuit",
+        "PDQ": 39.0,
+        "X": 295384.90600844211,
+        "Y": 5051117.9999964796,
+        "LONGITUDE": -73.620688,
+        "LATITUDE": 45.599902
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.62068788772747, 45.59990206295668]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-01-19",
+        "QUART": "soir",
+        "PDQ": 5.0,
+        "X": 285051.399,
+        "Y": 5033587.639,
+        "LONGITUDE": -73.752441,
+        "LATITUDE": 45.441942
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.752441122634181, 45.441941633181166]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-01",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-04",
+        "QUART": "jour",
+        "PDQ": 24.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2015-02-06",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298158.385997604,
+        "Y": 5045330.0939980401,
+        "LONGITUDE": -73.585057,
+        "LATITUDE": 45.547853
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.585057275748326, 45.547852727536075]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-11",
+        "QUART": "nuit",
+        "PDQ": 46.0,
+        "X": 299849.214,
+        "Y": 5053826.357,
+        "LONGITUDE": -73.563489,
+        "LATITUDE": 45.624319
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.563489459026599, 45.624318665093931]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-11",
+        "QUART": "nuit",
+        "PDQ": 46.0,
+        "X": 299849.214,
+        "Y": 5053826.357,
+        "LONGITUDE": -73.563489,
+        "LATITUDE": 45.624319
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.563489459026599, 45.624318665093931]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-15",
+        "QUART": "jour",
+        "PDQ": 30.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-01-01",
+        "QUART": "nuit",
+        "PDQ": 5.0,
+        "X": 288453.923,
+        "Y": 5037011.002,
+        "LONGITUDE": -73.709062,
+        "LATITUDE": 45.472834
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.709061685945954, 45.472834408798448]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vols qualifiés",
+        "DATE": "2015-01-19",
+        "QUART": "nuit",
+        "PDQ": 39.0,
+        "X": 293708.25001063,
+        "Y": 5050278.99999406,
+        "LONGITUDE": -73.642161,
+        "LATITUDE": 45.592328
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.642161066925965, 45.592327799674685]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-01-19",
+        "QUART": "nuit",
+        "PDQ": 24.0,
+        "X": 297204.88499236997,
+        "Y": 5042021.7120070299,
+        "LONGITUDE": -73.597217,
+        "LATITUDE": 45.518073
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.597217172206058, 45.518072937550983]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-01-26",
+        "QUART": "jour",
+        "PDQ": 39.0,
+        "X": 293979.749994385,
+        "Y": 5049919.4999927804,
+        "LONGITUDE": -73.638673,
+        "LATITUDE": 45.589097
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.638673341892073, 45.589097200625751]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-01-29",
+        "QUART": "soir",
+        "PDQ": 24.0,
+        "X": 297204.88499236997,
+        "Y": 5042021.7120070299,
+        "LONGITUDE": -73.597217,
+        "LATITUDE": 45.518073
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.597217172206058, 45.518072937550983]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-01-29",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-01-29",
+        "QUART": "soir",
+        "PDQ": 24.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-01",
+        "QUART": "soir",
+        "PDQ": 24.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-09",
+        "QUART": "jour",
+        "PDQ": 8.0,
+        "X": 288427.750007594,
+        "Y": 5036934.9999979697,
+        "LONGITUDE": -73.709394,
+        "LATITUDE": 45.47215
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.709393896261375, 45.472149897843501]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-09",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-09",
+        "QUART": "jour",
+        "PDQ": 22.0,
+        "X": 300910.19199670502,
+        "Y": 5043374.5980068892,
+        "LONGITUDE": -73.5498,
+        "LATITUDE": 45.530277
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.549800155378236, 45.530277255612418]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-10",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-17",
+        "QUART": "jour",
+        "PDQ": 8.0,
+        "X": 287386.553,
+        "Y": 5035839.13,
+        "LONGITUDE": -73.722671,
+        "LATITUDE": 45.462264
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.722671422373523, 45.462263613844989]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-20",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-24",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 291511.146,
+        "Y": 5040088.902,
+        "LONGITUDE": -73.670044,
+        "LATITUDE": 45.500596
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.670044174584689, 45.500595505094772]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-27",
+        "QUART": "jour",
+        "PDQ": 24.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-09",
+        "QUART": "jour",
+        "PDQ": 44.0,
+        "X": 298885.677003522,
+        "Y": 5046531.4010005202,
+        "LONGITUDE": -73.575758,
+        "LATITUDE": 45.558669
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.575757596082042, 45.558669055370778]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-03-16",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-21",
+        "QUART": "nuit",
+        "PDQ": 22.0,
+        "X": 300910.19199670502,
+        "Y": 5043374.5980068892,
+        "LONGITUDE": -73.5498,
+        "LATITUDE": 45.530277
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.549800155378236, 45.530277255612418]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-03-23",
+        "QUART": "soir",
+        "PDQ": 45.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-15",
+        "QUART": "jour",
+        "PDQ": 24.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-18",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-18",
+        "QUART": "soir",
+        "PDQ": 44.0,
+        "X": 298148.686001372,
+        "Y": 5045314.0930066695,
+        "LONGITUDE": -73.585181,
+        "LATITUDE": 45.547709
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.585181283251558, 45.547708652459868]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-19",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-19",
+        "QUART": "nuit",
+        "PDQ": 45.0,
+        "X": 296445.452996712,
+        "Y": 5054614.9099951396,
+        "LONGITUDE": -73.607153,
+        "LATITUDE": 45.631382
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.607153145797071, 45.631381638722374]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol dans / sur véhicule à moteur",
+        "DATE": "2015-02-25",
+        "QUART": "jour",
+        "PDQ": 15.0,
+        "X": 299150.0279924561,
+        "Y": 5037532.3519938802,
+        "LONGITUDE": -73.572268,
+        "LATITUDE": 45.477694
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.572267747879962, 45.477694216057714]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-03",
+        "QUART": "soir",
+        "PDQ": 44.0,
+        "X": 298959.29298973898,
+        "Y": 5046630.35900719,
+        "LONGITUDE": -73.574816,
+        "LATITUDE": 45.55956
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.574815818621587, 45.559560134001586]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-04",
+        "QUART": "nuit",
+        "PDQ": 7.0,
+        "X": 289426.921,
+        "Y": 5038045.241,
+        "LONGITUDE": -73.69665,
+        "LATITUDE": 45.482163
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.696649762528139, 45.482163021033493]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-04",
+        "QUART": "nuit",
+        "PDQ": 24.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-03-14",
+        "QUART": "jour",
+        "PDQ": 5.0,
+        "X": 286342.57342829998,
+        "Y": 5034951.6427245401,
+        "LONGITUDE": -73.735988,
+        "LATITUDE": 45.454251
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.735987703790514, 45.45425082301557]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-03-19",
+        "QUART": "nuit",
+        "PDQ": 44.0,
+        "X": 298477.15299456898,
+        "Y": 5045850.8639938897,
+        "LONGITUDE": -73.580982,
+        "LATITUDE": 45.552542
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.580981650207832, 45.552541763187349]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-03-21",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-03-24",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 292272.211,
+        "Y": 5041392.55,
+        "LONGITUDE": -73.660339,
+        "LATITUDE": 45.51234
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.66033892619015, 45.512340319356305]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-03-26",
+        "QUART": "jour",
+        "PDQ": 26.0,
+        "X": 293699.06599853601,
+        "Y": 5038695.0359965693,
+        "LONGITUDE": -73.642016,
+        "LATITUDE": 45.488091
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.642016116655583, 45.488091163494708]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-22",
+        "QUART": "jour",
+        "PDQ": 35.0,
+        "X": 297878.66400680511,
+        "Y": 5044876.8969926396,
+        "LONGITUDE": -73.588633,
+        "LATITUDE": 45.543772
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.588633183224474, 45.54377197794458]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-02-22",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2015-02-24",
+        "QUART": "jour",
+        "PDQ": 42.0,
+        "X": 296794.78100558597,
+        "Y": 5048652.9999977099,
+        "LONGITUDE": -73.602575,
+        "LATITUDE": 45.577739
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.602574952267659, 45.57773896567398]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Méfait",
+        "DATE": "2015-02-24",
+        "QUART": "jour",
+        "PDQ": 7.0,
+        "X": null,
+        "Y": null,
+        "LONGITUDE": null,
+        "LATITUDE": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-76.237289920302317, 0.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-03-05",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289932.074,
+        "Y": 5038532.123,
+        "LONGITUDE": -73.690203,
+        "LATITUDE": 45.486555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.690202711975985, 45.4865551264392]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Vol de véhicule à moteur",
+        "DATE": "2015-03-05",
+        "QUART": "soir",
+        "PDQ": 7.0,
+        "X": 289317.13835034799,
+        "Y": 5037884.7329784697,
+        "LONGITUDE": -73.698049,
+        "LATITUDE": 45.480716
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.69804901437243, 45.480716277738445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "CATEGORIE": "Introduction",
+        "DATE": "2024-07-31",
+        "QUART": "jour",
+        "PDQ": 38.0,
+        "X": 297158.20698982303,
+        "Y": 5043024.5789954402,
+        "LONGITUDE": -73.59783,
+        "LATITUDE": 45.527097
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.59783028705381, 45.527096611978806]
+      }
+    }
+  ]
+}
