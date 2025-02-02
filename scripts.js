@@ -4,7 +4,7 @@ let geoJsonLayer;
 let boundaryLayer;
 let selectedRegions = [];  // Holds the selected region boundaries
 let allBoundaryFeatures = [];  // All boundaries loaded from DB
-
+let bikeLaneLayer = null;
 // Static budget data (fake numbers) for each Montreal region.
 const regionBudgetData = {
   "LaSalle": {
@@ -70,9 +70,12 @@ function initMap() {
   if (!map) {
     console.log('Creating new map instance');
     map = L.map('map').setView([45.5017, -73.5673], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap contributors'
+     // Replacing OpenStreetMap with Mapbox Custom Style
+     L.tileLayer('https://api.mapbox.com/styles/v1/relusme/cm6mqwdfr00mm01s943kh6y0i/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVsdXNtZSIsImEiOiJjbTZtcTI4dmswb2JsMmtweWJweDJ2cThuIn0.r_rXgxgomdiVXq_Tg-bnUQ', {
+      attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+      tileSize: 512,
+      zoomOffset: -1,
+      maxZoom: 20
     }).addTo(map);
     loadMontrealBoundaries();
     setTimeout(() => {
@@ -81,6 +84,39 @@ function initMap() {
     }, 200);
   }
 }
+
+// Function to load and display bike lanes on the map
+function loadBikeLanes() {
+  fetch('/data?collection=reseau_cyclable') 
+      .then(response => response.json())
+      .then(data => {
+          console.log("Bike Lanes Data Loaded:", data);
+
+          // Create a GeoJSON layer for bike lanes
+          const bikeLaneLayer = L.geoJSON(data, {
+              style: function (feature) {
+                  return {
+                      color: "#e1e348", // Orange-red color for bike lanes
+                      weight: 1.5,  // Line thickness
+                      opacity: 0.4
+                  };
+              },
+              onEachFeature: function (feature, layer) {
+                  if (feature.properties) {
+                      const name = feature.properties.NOM_ARR_VILLE_DESC || "Unknown Area";
+                      const type = feature.properties.TYPE_VOIE_DESC || "Unknown Type";
+                      layer.bindPopup(`<b>Bike Lane</b><br>Area: ${name}<br>Type: ${type}`);
+                  }
+              }
+          });
+
+          // Add the bike lanes layer to the existing map
+          bikeLaneLayer.addTo(map);
+      })
+      .catch(error => console.error("Error loading bike lanes:", error));
+}
+
+
 function loadMontrealBoundaries() {
   fetch('/data?collection=limites_administratives_agglomeration')
     .then(response => response.json())
@@ -165,6 +201,11 @@ function toggleRegionSelection(e) {
     selectedRegions.splice(index, 1);
     boundaryLayer.resetStyle(layer);
   }
+
+
+  //Reload bike lanes based on selected regions
+  filterBikeLanesByRegion();
+
 }
 function addRegionToDropdown(name, feature) {
   const select = document.getElementById('region-select');
@@ -455,6 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(html => {
         document.getElementById('itemsContainer').innerHTML = html;
         setTimeout(initMap, 100);
+        setTimeout(loadBikeLanes, 1000); // Load bike lanes after map is ready
         document.querySelectorAll('.data-card').forEach((card, index) => {
           card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s forwards`;
           card.style.opacity = '0';
