@@ -186,6 +186,17 @@ body {
 /* ---------- Layout Adjustments for Dashboard Cards ---------- */
 /* Use a two‑column grid for the first row and full width for the advisor chat */
 
+.map-controls {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%; /* Ensures it spans full width */
+}
+
+
 .data-grid {
     display: inline-flex; /* First two cards stay inline */
     flex-wrap: wrap; /* Allows the third card to be on a new row */
@@ -193,6 +204,14 @@ body {
     width: 100%;
     box-sizing: border-box;
 }
+
+.data-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Ensures text within elements is centered */
+}
+
 
 /* First two cards stay on the same row */
 .data-card:nth-child(1) {
@@ -1055,7 +1074,7 @@ button:hover {
   .legend-line {
     width: 28px;
     height: 2px;
-    background-color: #E1E348; /* Yellow color for bike lanes */
+    background-color: #37a110; /* Yellow color for bike lanes */
     display: inline-block;
     margin-right: 8px;
   }

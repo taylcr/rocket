@@ -7,86 +7,170 @@ let allBoundaryFeatures = []; // All boundaries loaded from DB
 let bikeLaneLayer = null;
 
 // Static budget data
+// const regionBudgetData = {
+//   "Ahuntsic-Cartierville": {
+//     renting: { min: 1999, max: 3955 },
+//     buying: { min: 383484, max: 930929 },
+//   },
+//   Anjou: {
+//     renting: { min: 1958, max: 3353 },
+//     buying: { min: 373748, max: 733719 },
+//   },
+//   "Cote-des-Neiges-Notre-Dame-de-Grace": {
+//     renting: { min: 2278, max: 4907 },
+//     buying: { min: 449624, max: 1287520 },
+//   },
+//   "Cote-Saint-Luc": {
+//     renting: { min: 2798, max: 4636 },
+//     buying: { min: 572919, max: 1165378 },
+//   },
+//   "Dollard-des-Ormeaux": {
+//     renting: { min: 1841, max: 3753 },
+//     buying: { min: 350935, max: 872125 },
+//   },
+//   Hampstead: {
+//     renting: { min: 1841, max: 9945 },
+//     buying: { min: 350935, max: 3160600 },
+//   },
+//   Kirkland: {
+//     renting: { min: 1841, max: 4110 },
+//     buying: { min: 350935, max: 959638 },
+//   },
+//   "L Ile Bizard Sainte Genevieve": {
+//     renting: { min: 1841, max: 3519 },
+//     buying: { min: 350935, max: 796012 },
+//   },
+//   LaSalle: {
+//     renting: { min: 2236, max: 3462 },
+//     buying: { min: 437942, max: 762018 },
+//   },
+//   Lachine: {
+//     renting: { min: 2059, max: 3443 },
+//     buying: { min: 397406, max: 763256 },
+//   },
+//   "Le Plateau-Mont-Royal": {
+//     renting: { min: 2588, max: 4620 },
+//     buying: { min: 526565, max: 1188488 },
+//   },
+//   "Le Sud-Ouest": {
+//     renting: { min: 2543, max: 3891 },
+//     buying: { min: 519786, max: 921651 },
+//   },
+//   "Mercier-Hochelaga-Maisonneuve": {
+//     renting: { min: 2061, max: 3454 },
+//     buying: { min: 397284, max: 776501 },
+//   },
+//   "Mont-Royal": {
+//     renting: { min: 1833, max: 5144 },
+//     buying: { min: 347948, max: 1347682 },
+//   },
+//   "Montreal-Est": {
+//     renting: { min: 1833, max: 2382 },
+//     buying: { min: 347948, max: 467314 },
+//   },
+//   "Montreal-Nord": {
+//     renting: { min: 1833, max: 3332 },
+//     buying: { min: 347948, max: 740735 },
+//   },
+//   "Montreal-Ouest": {
+//     renting: { min: 2638, max: 4312 },
+//     buying: { min: 534221, max: 1041956 },
+//   },
+//   Outremont: {
+//     renting: { min: 3426, max: 5911 },
+//     buying: { min: 766710, max: 1663648 },
+//   },
+//   "Pierrefonds-Roxboro": {
+//     renting: { min: 1930, max: 3440 },
+//     buying: { min: 369347, max: 735050 },
+//   },
+//   "Riviere-des-Prairies-Pointe-aux-Trembles": {
+//     renting: { min: 1692, max: 2836 },
+//     buying: { min: 317795, max: 594172 },
+//   },
+// };
+
+
 const regionBudgetData = {
   "Ahuntsic-Cartierville": {
-    renting: { min: 1999, max: 3955 },
-    buying: { min: 383484, max: 930929 },
+    renting: { min: 2000, max: 3900 },
+    buying: { min: 380000, max: 920000 },
   },
   Anjou: {
-    renting: { min: 1958, max: 3353 },
-    buying: { min: 373748, max: 733719 },
+    renting: { min: 1800, max: 3100 },
+    buying: { min: 360000, max: 710000 },
   },
   "Cote-des-Neiges-Notre-Dame-de-Grace": {
-    renting: { min: 2278, max: 4907 },
-    buying: { min: 449624, max: 1287520 },
+    renting: { min: 2500, max: 4700 },
+    buying: { min: 460000, max: 1250000 },
   },
   "Cote-Saint-Luc": {
-    renting: { min: 2798, max: 4636 },
-    buying: { min: 572919, max: 1165378 },
+    renting: { min: 2700, max: 4500 },
+    buying: { min: 550000, max: 1140000 },
   },
   "Dollard-des-Ormeaux": {
-    renting: { min: 1841, max: 3753 },
-    buying: { min: 350935, max: 872125 },
+    renting: { min: 1900, max: 3500 },
+    buying: { min: 340000, max: 860000 },
   },
   Hampstead: {
-    renting: { min: 1841, max: 9945 },
-    buying: { min: 350935, max: 3160600 },
+    renting: { min: 2800, max: 10000 },
+    buying: { min: 600000, max: 3200000 },
   },
   Kirkland: {
-    renting: { min: 1841, max: 4110 },
-    buying: { min: 350935, max: 959638 },
+    renting: { min: 2200, max: 4200 },
+    buying: { min: 450000, max: 980000 },
   },
   "L Ile Bizard Sainte Genevieve": {
-    renting: { min: 1841, max: 3519 },
-    buying: { min: 350935, max: 796012 },
+    renting: { min: 1600, max: 3200 },
+    buying: { min: 310000, max: 720000 },
   },
   LaSalle: {
-    renting: { min: 2236, max: 3462 },
-    buying: { min: 437942, max: 762018 },
+    renting: { min: 2300, max: 3600 },
+    buying: { min: 440000, max: 750000 },
   },
   Lachine: {
-    renting: { min: 2059, max: 3443 },
-    buying: { min: 397406, max: 763256 },
+    renting: { min: 2100, max: 3300 },
+    buying: { min: 400000, max: 740000 },
   },
   "Le Plateau-Mont-Royal": {
-    renting: { min: 2588, max: 4620 },
-    buying: { min: 526565, max: 1188488 },
+    renting: { min: 2800, max: 4800 },
+    buying: { min: 530000, max: 1200000 },
   },
   "Le Sud-Ouest": {
-    renting: { min: 2543, max: 3891 },
-    buying: { min: 519786, max: 921651 },
+    renting: { min: 2600, max: 3900 },
+    buying: { min: 510000, max: 900000 },
   },
   "Mercier-Hochelaga-Maisonneuve": {
-    renting: { min: 2061, max: 3454 },
-    buying: { min: 397284, max: 776501 },
+    renting: { min: 2000, max: 3400 },
+    buying: { min: 380000, max: 760000 },
   },
   "Mont-Royal": {
-    renting: { min: 1833, max: 5144 },
-    buying: { min: 347948, max: 1347682 },
+    renting: { min: 3000, max: 5200 },
+    buying: { min: 600000, max: 1350000 },
   },
   "Montreal-Est": {
-    renting: { min: 1833, max: 2382 },
-    buying: { min: 347948, max: 467314 },
+    renting: { min: 1700, max: 2300 },
+    buying: { min: 330000, max: 460000 },
   },
   "Montreal-Nord": {
-    renting: { min: 1833, max: 3332 },
-    buying: { min: 347948, max: 740735 },
+    renting: { min: 1800, max: 3100 },
+    buying: { min: 340000, max: 730000 },
   },
   "Montreal-Ouest": {
-    renting: { min: 2638, max: 4312 },
-    buying: { min: 534221, max: 1041956 },
+    renting: { min: 2700, max: 4200 },
+    buying: { min: 540000, max: 1030000 },
   },
   Outremont: {
-    renting: { min: 3426, max: 5911 },
-    buying: { min: 766710, max: 1663648 },
+    renting: { min: 3500, max: 6000 },
+    buying: { min: 770000, max: 1700000 },
   },
   "Pierrefonds-Roxboro": {
-    renting: { min: 1930, max: 3440 },
-    buying: { min: 369347, max: 735050 },
+    renting: { min: 1900, max: 3200 },
+    buying: { min: 360000, max: 700000 },
   },
   "Riviere-des-Prairies-Pointe-aux-Trembles": {
-    renting: { min: 1692, max: 2836 },
-    buying: { min: 317795, max: 594172 },
+    renting: { min: 1600, max: 2700 },
+    buying: { min: 310000, max: 580000 },
   },
 };
 
@@ -144,6 +228,8 @@ const sportIcon = L.divIcon({
 // --- Map & Data Functions ---
 function initMap() {
   console.log("Initializing map...");
+
+  loadBikeLanes();
   const mapElement = document.getElementById("map");
   if (!mapElement) {
     console.error("Map element not found");
@@ -175,11 +261,12 @@ function loadBikeLanes() {
   fetch("/data?collection=reseau_cyclable")
     .then((response) => response.json())
     .then((data) => {
+      
       console.log("Bike Lanes Data Loaded:", data);
       const bikeLaneLayer = L.geoJSON(data, {
         style: function (feature) {
           return {
-            color: "#e1e348",
+            color: "#37a110",
             weight: 1.5,
             opacity: 0.4,
           };
