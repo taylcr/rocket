@@ -171,6 +171,7 @@ function initMap() {
   }
 }
 
+
 function loadBikeLanes() {
   fetch("/data?collection=reseau_cyclable")
     .then((response) => response.json())
