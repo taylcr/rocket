@@ -28,9 +28,12 @@ function initMap() {
     console.log('Creating new map instance');
     map = L.map('map').setView([45.5017, -73.5673], 12);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap contributors'
+    // ✅ Replacing OpenStreetMap with Mapbox Custom Style
+    L.tileLayer('https://api.mapbox.com/styles/v1/relusme/cm6mqwdfr00mm01s943kh6y0i/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmVsdXNtZSIsImEiOiJjbTZtcTI4dmswb2JsMmtweWJweDJ2cThuIn0.r_rXgxgomdiVXq_Tg-bnUQ', {
+      attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+      tileSize: 512,
+      zoomOffset: -1,
+      maxZoom: 20
     }).addTo(map);
 
     // Load Montreal boundaries
