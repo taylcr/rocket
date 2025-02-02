@@ -1034,3 +1034,54 @@ button:hover {
         width: 100%;
     }
 }
+.leaflet-control-attribution {
+    display: none !important;
+}
+
+  
+  #legend {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Moves it to the right */
+    background: transparent; /* Fully transparent background */
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Keeps it above the map */
+  }
+  
+  .legend-line {
+    width: 28px;
+    height: 2px;
+    background-color: #E1E348; /* Yellow color for bike lanes */
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  /* Style for Leaflet Zoom Controls */
+.leaflet-control-zoom a {
+    background: transparent !important; /* Makes the background transparent */
+    color: white !important; /* Makes the text/icons white */
+    border: 1px solid rgba(12, 12, 12, 0.3); /* Optional: Adds a subtle border */
+    box-shadow: none !important;
+    font-size: 18px; /* Adjusts the icon size */
+    width: 35px; /* Adjusts button size */
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+/* Hover effect */
+.leaflet-control-zoom a:hover {
+    background: rgba(255, 255, 255, 0.2) !important; /* Slight highlight on hover */
+}
+
+/* Optional: Rounder buttons */
+.leaflet-control-zoom {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+  
