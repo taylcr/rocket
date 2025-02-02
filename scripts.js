@@ -266,7 +266,7 @@ function loadBikeLanes() {
       const bikeLaneLayer = L.geoJSON(data, {
         style: function (feature) {
           return {
-            color: "#37a110",
+            color: "#03570b",
             weight: 1.5,
             opacity: 0.4,
           };

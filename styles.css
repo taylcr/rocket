@@ -1074,7 +1074,7 @@ button:hover {
   .legend-line {
     width: 28px;
     height: 2px;
-    background-color: #37a110; /* Yellow color for bike lanes */
+    background-color: #03570b; /* Yellow color for bike lanes */
     display: inline-block;
     margin-right: 8px;
   }
