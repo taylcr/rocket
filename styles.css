@@ -808,3 +808,23 @@ button:hover {
     background-color: #0056b3;
 }
 
+
+.custom-div-icon {
+    background: transparent;
+    border: none;
+  }
+  
+  .custom-marker {
+    /* Set a font size to make the icon visible */
+    font-size: 24px;
+    line-height: 24px;
+  }
+  
+  .ev-marker i {
+    color: #007bff;  /* Blue color for EV Charging Stations */
+  }
+  
+  .house-marker i {
+    color: #28a745;  /* Green color for Housing Inspections */
+  }
+

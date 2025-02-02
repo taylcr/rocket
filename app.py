@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
 from pymongo import MongoClient
+from bson import json_util  # for converting BSON to JSON
 from openai import OpenAI
-from bson import json_util
 import json
 import os
 
@@ -38,13 +38,18 @@ EV_CHARGING_TRANSLATION = {
 }
 
 def fix_encoding(text):
-    """Fix encoding issues where 'Ã©' appears instead of 'é'."""
+    """
+    Fix mis‑decoded French characters.
+    If the text appears to be UTF‑8 encoded but decoded as cp1252,
+    re‑encode it using cp1252 and decode as UTF‑8.
+    """
     if isinstance(text, str):
         try:
-            return text.encode('latin1').decode('utf-8')
-        except UnicodeEncodeError:
+            # Using cp1252 often fixes these issues on French texts.
+            return text.encode('cp1252').decode('utf8')
+        except Exception:
             return text
-    return text
+    return text  
 
 # 🔹 Serve Static Files (HTML, JS, CSS)
 @app.route('/')
@@ -62,29 +67,25 @@ def get_data():
     if collection_name:
         collection = db[collection_name]
         features = list(collection.find({}, {'_id': 0}))
-
-        # Convert BSON objects to plain JSON objects
+        # Convert BSON to plain JSON so that nested properties appear as expected.
         features = json.loads(json_util.dumps(features))
-
+        
+        # Optionally apply translation mapping for certain collections.
         for feature in features:
             if "properties" in feature:
                 properties = feature["properties"]
-
-                # Only apply translation mapping for collections with a defined map
                 if collection_name == "inspections_salubrite":
                     translation_map = INSPECTIONS_TRANSLATION
                 elif collection_name == "bornes_recharge_publiques":
                     translation_map = EV_CHARGING_TRANSLATION
                 else:
-                    translation_map = None  # For collections like boundaries, keep original properties
-
+                    translation_map = None
                 if translation_map is not None:
                     translated_properties = {
                         translation_map.get(k, k): fix_encoding(v)
                         for k, v in properties.items()
                         if k in translation_map
                     }
-                    # Ensure latitude/longitude values are preserved if available
                     if "Latitude" not in translated_properties and "LATITUDE" in properties:
                         translated_properties["Latitude"] = properties["LATITUDE"]
                     if "Longitude" not in translated_properties and "LONGITUDE" in properties:
@@ -93,7 +94,6 @@ def get_data():
 
         print("DEBUG: Data Sent to Frontend:", features[:5])
         return jsonify(features)
-
     return jsonify([])
 
 # 🔹 OpenAI Chatbot Route
@@ -102,10 +102,9 @@ def analyze():
     try:
         data = request.get_json()
         user_message = data.get('message', '')
-
         if not user_message:
             return jsonify({'error': 'No message provided'}), 400
-
+        
         system_message = (
             "You are a helpful assistant. You can:\n"
             "1. Answer questions about the data\n"
@@ -125,10 +124,8 @@ def analyze():
             max_tokens=150,
             temperature=0.7
         )
-
         assistant_response = response.choices[0].message.content
         return jsonify({'summary': assistant_response})
-
     except Exception as e:
         return jsonify({'error': f'Error processing message: {str(e)}'}), 500
 
